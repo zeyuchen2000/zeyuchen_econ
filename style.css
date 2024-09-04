@@ -154,10 +154,10 @@ div.info_title {
 }
 
 div.info_content {
-    font-family: 'OpenSans', Calibri, 'Canger', sans-serif;
+    font-family: Calibri, 'Canger', sans-serif;
     padding: 2px;
     padding-left: 4px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 14px;
 }
