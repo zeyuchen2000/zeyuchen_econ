@@ -173,12 +173,12 @@ div.info_content {
     transform-origin: 70% 25%;
 }
 
-#main, #main_blog {
+#main {
     float: right;
     min-height: 100px;
     height: auto !important;
     height: 400px;
-    width: 650px;
+    width: 600px;
     padding-top: 5px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -197,6 +197,12 @@ div.info_content {
 
 #main_blog{
     border-bottom: 1px solid #d0d0d0; 
+    margin-left: 0px;
+}
+
+#main_blog p {
+    margin-left: 0em;
+    margin-bottom: 5px;
 }
 
 .abstract {
