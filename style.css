@@ -202,10 +202,6 @@ div.info_content {
     margin-bottom: 5px;
 }
 
-#main_blog{
-    margin-left: 0px;
-}
-
 #main_blog p {
     margin-left: 0em;
     margin-bottom: 5px;
@@ -231,10 +227,11 @@ div.info_content {
 
 .blog_date{ 
     font-size: 12px; 
-    font-family: "Courier New"; 
+    font-family: 'OpenSans Light'; 
+    letter-spacing: 1px;
 }
 
-.main_blog{
+.blog_div{
     border-bottom: 1px solid #d0d0d0;
 }
 
