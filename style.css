@@ -97,7 +97,12 @@ a:hover {
     margin: 0 10px;
 }
 
-#navigation li:hover, #navigation li#active {
+#navigation li.active {
+    background-color: #f6f6f6;
+    color: #484848;
+}
+
+#navigation li:hover, #navigation li:active {
     background-color: #f6f6f6;
     color: #484848;
 }
@@ -229,6 +234,10 @@ div.info_content {
     font-family: "Courier New"; 
 }
 
+.main_blog{
+    border-bottom: 1px solid #d0d0d0;
+}
+
 #footer {
     border-top: 1px solid #d0d0d0;
     color: #9BA1A6;
@@ -238,6 +247,7 @@ div.info_content {
     padding: 10px 0;
     width: 100%;
     max-width: 900px; /* 与导航栏一致 */
+    min-height: 100px;
     margin: 0 auto;
     box-sizing: border-box;
 }
