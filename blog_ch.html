@@ -1,0 +1,137 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zeyu CHEN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div id="header">
+        <div id="name">Zeyu CHEN</div>
+    </div>
+
+    <div id="wrapper">
+        <div id="navigation">
+            <ul>
+                <li id="home" style="position: relative">
+                    <a href="index.html"> HOME </a>
+                </li>
+                <li id="research" style="position: relative">
+                    <a href="research.html"> RESEARCH </a>
+                </li>
+                <li id="blog" style="position: relative">
+                    <a href="blog.html"> BLOG </a>
+                </li>
+                <li id="cv" style="position: relative">
+                    <a href="files/Zeyuchen_CV.pdf"> CV </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="info_main_container">
+            <div id="information">
+                <div class="cropped-image-container">
+                    <img src="pictures/my_pict1.jpg" class="cropped-image">
+                </div>
+                
+                <div class="info_title">
+                    Name
+                </div>
+                <div class="info_content">
+                    Zeyu Chen (陈泽宇)
+                </div>
+
+                <div class="info_title">
+                    Nationality
+                </div>
+                <div class="info_content">
+                    China
+                </div>
+
+                <div class="info_title">
+                    Date of birth
+                </div>
+                <div class="info_content">
+                    May 23, 2000
+                </div>
+
+                <div class="info_title">
+                    Mail
+                </div>
+                <div class="info_content">
+                    <a href="mailto: rucczy@ruc.edu.cn">rucczy@ruc.edu.cn</a>
+                </div>
+                
+                <div class="info_title">
+                    ORCID
+                </div>
+                <div class="info_content">
+                    <a href="https://orcid.org/0000-0003-2449-188X", target="_blank">0000-0003-2449-188X</a>
+                </div>
+            </div>
+
+            <div id="main">
+                <div id="blog_language_button">
+                    <strong><u>Chinese</u></strong>/<a href="blog.html">English</a>
+                </div>
+
+                <div id="main_blog">
+                    <div class="blog_div">
+                        <p class="blog_title">
+                            主页完成！
+                        </p>
+                        
+                        <p class="blog_date">
+                            2024-09-04
+                        </p>
+
+                        <p>
+                            纪念主页建成的第一天！自己写网页还是有些折腾的，好在以前学爬虫的时候学过一点HTML。以后我可能会在这个页面中分享一些学术活动和日常生活，之后会抽空补档一些以前的记录。
+                        </p>
+                    </div>
+
+                    <div class="blog_div">
+                        
+                        <p class="blog_title">
+                            一篇关于聚类稳健推断的使用指南
+                        </p>
+                        
+                        <p class="blog_date">
+                            2023-07-18
+                        </p>
+                            
+                        <p>
+                            这是当时组会上分享的文章，是关于聚类稳健推断在这几年形成的一些理论共识。在原文的基础上，我补充了不少以前读过的相关文献，汇总成了一个更丰富的<a href="blogs/files/cluster_slides.pdf">Slides</a>，供大家参考。其中，重要信息已由双下划线标注，此外我也标准了一些重要方法在<code>Stata</code>中如何使用。
+                            
+                            一些要点摘录于此：
+                            <ul>
+                                <li>如果选择考虑聚类的渐进标准误，那么当样本量较少时，尽量使用由jackknife法计算出的聚类渐进标准误，其具有更好的小样本性质且更保守。</li>
+                                <li>随着样本量的增大，聚类标准误的缩小可能存在下界，因此大样本下，忽略聚类结构导致的标准误低估往往非常严重。</li>
+                                <li>使用DD方法的时候，至少要聚类到接受处理的地理层级。</li>
+                                <li>当处理组的聚类数量很少时，考虑聚类的渐进标准误可能会过度拒绝原假设，这时候最好用考虑聚类的原始自助法标准误</li>
+                                <li>在绝大多数情况下，加入固定效应绝不是不聚类的理由。</li>
+                                <li>两种确定聚类层级的经验法则：
+                                    <ol type="i">
+                                        <li>最直接的方法：在聚类数量不至于太少的前提下，选择所有可行的聚类层级中最大的那一级</li>
+                                        <li>最保守的方法：对于感兴趣的系数，汇报所有可行的聚类层级中最大的那个标准误</li>
+                                    </ol>
+                                </li>
+                                <li>有一些用来判断聚类层级的预检验方法，但任何预检验方法如果没有与后续的统计推断一并进行联合假设检验，则均会导致过度拒绝原假设。建议以上述第ii个经验法则为准。</li>
+                                <li>DD方法在国内研究者中流传甚广的“安慰剂检验”是用来辅助统计推断的(Chetty et al., 2009, <em>AER</em>)，从来不能用来说明因果识别的好坏！误用现象非常普遍！</li>
+                                <li>存在聚类结构时，决定中心极限定理效果好坏的关键在于聚类数量与聚类间的差异性，而非仅仅是样本数量。</li>
+                                <li>如果聚类数量很少或聚类之间差异很大，考虑聚类的渐进标准误就不太好用了，因为其依赖于中心极限定理成立。</li>
+                                <li>除了汇报常用的渐进标准误，大多数情况下都建议大家另外再汇报由带约束条件的原始聚类自助法(restricted wild-cluster bootstrap)计算出的p值。</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        &copy; 2024 Zeyu CHEN.
+    </div>
+   
+</body>

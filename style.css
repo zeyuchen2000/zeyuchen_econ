@@ -229,10 +229,25 @@ div.info_content {
     font-size: 12px; 
     font-family: 'OpenSans Light'; 
     letter-spacing: 1px;
+    margin-left: 2px;
 }
 
 .blog_div{
     border-bottom: 1px solid #d0d0d0;
+}
+
+#blog_language_button {
+    color: #484848;
+    text-align: right;
+    
+}
+
+#blog_language_button a {
+    color: #484848;
+}
+
+#blog_language_button a:hover {
+    color: #DD6800;
 }
 
 #footer {
