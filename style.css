@@ -19,35 +19,35 @@
 }
 
 @font-face {
-    font-family: 'Carlito';
-    src: url('fonts/Carlito-Regular.ttf') format('truetype');
+    font-family: "Carlito";
+    src: url('fonts/"Carlito"-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Carlito';
-    src: url('fonts/Carlito-Italic.ttf') format('truetype');
+    font-family: "Carlito";
+    src: url('fonts/"Carlito"-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Carlito';
-    src: url('fonts/Carlito-Bold.ttf') format('truetype');
+    font-family: "Carlito";
+    src: url('fonts/"Carlito"-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Carlito';
-    src: url('fonts/Carlito-BoldItalic.ttf') format('truetype');
+    font-family: "Carlito";
+    src: url('fonts/"Carlito"-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
 body {
-    font-family: 'Gill Sans MT', Carlito, 'Canger', sans-serif;
+    font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
     padding-left: 10%;
     padding-right: 10%;
     color: #484848;
@@ -174,7 +174,7 @@ a:hover {
 }
 
 div.info_title {
-    font-family: 'OpenSans', Carlito, 'Canger2', sans-serif;
+    font-family: 'OpenSans', "Carlito", 'Canger2', sans-serif;
     line-height: 1; 
     color: #004488;
     margin-bottom: 5px;
@@ -187,7 +187,7 @@ div.info_title {
 }
 
 div.info_content {
-    font-family: 'OpenSans', Carlito, 'Canger', sans-serif;
+    font-family: 'OpenSans', "Carlito", 'Canger', sans-serif;
     padding: 2px;
     padding-left: 4px;
     font-size: 12px;
@@ -237,7 +237,7 @@ div.info_content {
 
 .abstract {
     font-size: 15px;
-    font-family: Carlito;
+    font-family: "Carlito";
     line-height: 1.2; 
     margin-top: 5px;
 }
@@ -249,7 +249,7 @@ div.info_content {
 
 .blog_title { 
     font-size: 20px; 
-    font-family: 'Gill Sans MT', Carlito, 'Canger', sans-serif;
+    font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
     font-weight: bold;
 } 
 
