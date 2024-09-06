@@ -237,7 +237,7 @@ div.info_content {
 
 .abstract {
     font-size: 15px;
-    font-family: "Carlito";
+    font-family: "Carlito", sans-serif;
     line-height: 1.2; 
     margin-top: 5px;
 }
