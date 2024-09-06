@@ -18,6 +18,34 @@
     src: url('fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Carlito';
+    src: url('fonts/Carlito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carlito';
+    src: url('fonts/Carlito-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carlito';
+    src: url('fonts/Carlito-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carlito';
+    src: url('fonts/Carlito-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 body {
     font-family: 'Gill Sans MT', Carlito, 'Canger', sans-serif;
     padding-left: 10%;
@@ -210,7 +238,7 @@ div.info_content {
 .abstract {
     font-size: 15px;
     font-family: Carlito;
-    line-height: 1.1; 
+    line-height: 1.2; 
     margin-top: 5px;
 }
 
