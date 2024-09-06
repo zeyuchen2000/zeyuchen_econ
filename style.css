@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Gill Sans MT', Calibri, 'Canger', sans-serif;
+    font-family: 'Gill Sans MT', Carlito, 'Canger', sans-serif;
     padding-left: 10%;
     padding-right: 10%;
     color: #484848;
@@ -80,7 +80,7 @@ a:hover {
     background-color: #d0d0d0;
     position: absolute;
     top: 50%;
-    width: calc(50% - 230px); /* 动态计算宽度，60px 是总标签的宽度一半 */
+    width: calc(50% - 230px);
     margin-top: -1px;
 }
 
@@ -117,19 +117,19 @@ a:hover {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 10px; /* 可选：内边距，防止内容紧贴浏览器边缘 */
+    padding: 0 10px; 
 }
 
 #info_main_container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap; /* 确保内容不换行 */
-    gap: 50px; /* 可选：控制两个块之间的间距 */
+    flex-wrap: nowrap;
+    gap: 50px;
 }
 
 #information {
-    flex: 0 1 150px; /* 基础宽度为 150px，允许缩小 */
-    max-width: 200px; /* 可选：最大宽度 */
+    flex: 0 1 150px;
+    max-width: 200px;
     text-align: left;
     padding: 5px 10px;
     box-sizing: border-box;
@@ -146,7 +146,7 @@ a:hover {
 }
 
 div.info_title {
-    font-family: 'OpenSans', Calibri, 'Canger2', sans-serif;
+    font-family: 'OpenSans', Carlito, 'Canger2', sans-serif;
     line-height: 1; 
     color: #004488;
     margin-bottom: 5px;
@@ -159,7 +159,7 @@ div.info_title {
 }
 
 div.info_content {
-    font-family: 'OpenSans', Calibri, 'Canger', sans-serif;
+    font-family: 'OpenSans', Carlito, 'Canger', sans-serif;
     padding: 2px;
     padding-left: 4px;
     font-size: 12px;
@@ -185,8 +185,8 @@ div.info_content {
 }
 
 #main {
-    flex: 1 1 600px; /* 基础宽度为 600px，允许缩小 */
-    max-width: 800px; /* 最大宽度 */
+    flex: 1 1 600px;
+    max-width: 800px;
     min-height: 100px;
     padding: 5px 10px;
     text-align: left;
@@ -209,7 +209,7 @@ div.info_content {
 
 .abstract {
     font-size: 15px;
-    font-family: Calibri;
+    font-family: Carlito;
     line-height: 1.1; 
     margin-top: 5px;
 }
@@ -221,13 +221,13 @@ div.info_content {
 
 .blog_title { 
     font-size: 20px; 
-    font-family: 'Gill Sans MT', Calibri, 'Canger', sans-serif;
+    font-family: 'Gill Sans MT', Carlito, 'Canger', sans-serif;
     font-weight: bold;
 } 
 
 .blog_date{ 
     font-size: 12px; 
-    font-family: 'OpenSans Light'; 
+    font-family: 'OpenSans', sans-serif; 
     letter-spacing: 1px;
     margin-left: 2px;
 }
@@ -254,11 +254,11 @@ div.info_content {
     border-top: 1px solid #d0d0d0;
     color: #9BA1A6;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'OpenSans', sans-serif;
     text-align: right;
     padding: 10px 0;
     width: 100%;
-    max-width: 900px; /* 与导航栏一致 */
+    max-width: 900px;
     min-height: 100px;
     margin: 0 auto;
     box-sizing: border-box;
