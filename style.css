@@ -178,21 +178,20 @@ div.info_title {
     line-height: 1; 
     color: #004488;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 2px;
     padding-left: 4px;
     border-bottom: 1px solid #d0d0d0;
     font-size: 13px;
-    font-weight: 400;
 }
 
 div.info_content {
     font-family: 'OpenSans', "Carlito", 'Canger', sans-serif;
+    color: #484848;
     padding: 2px;
     padding-left: 4px;
     font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
+    line-height: 10px;
 }
 
 .cropped-image-container {
@@ -270,11 +269,11 @@ div.info_content {
     
 }
 
-#blog_language_button a {
+#blog_language_button a, #paper a {
     color: #484848;
 }
 
-#blog_language_button a:hover {
+#blog_language_button a:hover, #paper a:hover {
     color: #DD6800;
 }
 
