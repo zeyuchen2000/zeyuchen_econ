@@ -246,6 +246,14 @@ div.info_content {
     display: block;
 }
 
+#author a {
+    color: #484848
+}
+
+#author a:hover {
+    color: #DD6800;
+}
+
 .blog_title { 
     font-size: 20px; 
     font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
