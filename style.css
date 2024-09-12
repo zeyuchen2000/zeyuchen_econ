@@ -125,12 +125,12 @@ a:hover {
     margin: 0 10px;
 }
 
-#navigation li.active {
+#navigation li:hover, #navigation li:active {
     background-color: #f6f6f6;
     color: #484848;
 }
 
-#navigation li:hover, #navigation li:active {
+#navigation .li_active {
     background-color: #f6f6f6;
     color: #484848;
 }
