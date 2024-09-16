@@ -4,6 +4,8 @@
     <title>Blog - Zeyu CHEN</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -90,6 +92,47 @@
 
                         <p>
                             Just launched the site! It's a bit tricky to write the page by myself, but I'm glad I picked up some HTML when I was learning about web crawlers. I might share some of my academic stuff and daily life here in the future, and I'll also try to archive some of my older records.
+                        </p>
+                    </div>
+
+                    <div class="blog_div">
+                        <p class="blog_title">
+                            How to correctly use cluster-robust inference?
+                        </p>
+                        
+                        <p class="blog_date">
+                            2023-07-18
+                        </p>
+
+                        <p id="paper">
+                            Paper: MacKinnon, James G., Morten Ørregaard Nielsen, and Matthew D. Webb, "<a href="https://doi.org/10.1016/j.jeconom.2022.04.001" target="_blank">Cluster-robust inference: A guide to empirical practice</a>," <em>Journal of Econometrics</em>, 232 (2023), 272–299.
+                        </p>
+
+                        <p>
+                            This is a really useful paper on cluster-robust inference. I've given a few presentations on it, totaling about 3 hours, in our workshop. I also added some extra materials and shared my own thoughts beyond what's covered in the paper, which can be found in the <a href="blogs/files/cluster_slides.pdf", target="_blank">[slides]</a>. Plus, I introduce how to use some of mentioned inference methods in Stata.
+                        </p>
+
+                        <p>
+                            Here is some key points:
+                            <ol>
+                                <li>When deciding to use asymptotic inference, it is recommended to use asymptotic standard errors calculated from jackknife (leave-one-out) method when sample size is small, since it has better small-sample properties (it is unbiased) and is relatively conservative.</li>
+                                <li>As the sample size increases, there seems to be a lower bound on the shrinkage of the cluster-robust standard error, and thus the underestimation of the standard error due to ignoring the clustered structure becomes increasingly larger. (In other words, it is more necessary to treat clustered structure carefully when the sample size is large.)</li>
+                                <li>When using DD estimates, it is important to cluster at least to the geographic level where the treatment is assigned.</li>
+                                <li>If the number of treatment clusters are small, don't use asymptotic cluster-robust standard errors but use wide-cluster bootstrap standard errors.</li>
+                                <li>In the vast majority of cases, adding fixed effects is not the reason for not clustering.</li>
+                                <li>
+                                    There are two rules of thumb to decide the cluster level:
+                                    <ol type="i">
+                                        <li>An intuitive rule: to choose the most coarse one among all possible levels, up to the point at which there is concern about having too few clusters</li>
+                                        <li>A conservative rule: to report the largest standard error for the coefficient of interest across all estimated at varying possible cluster levels.</li>
+                                    </ol>
+                                </li>
+                                <li>There are some pre-tests that are helpful in deciding the cluster level, but pre-tests always lead to over-reject because they in and of themselves could make mistakes. Therefore, The ideal procedure is to cluster based on the second rule of thumb and use pre-tests to further support the choice.</li>
+                                <li>The permutation test ("placebo test") commonly used in DD estimation (especially in Chinese literature) is used to support the statistic inference rather than the causal identification.</li>
+                                <li>The asymptotic inference relies on the central limit theorem (CLT). The number of clusters and the heterogeneity among clusters both determine whether asymptotic theories work well. Therefore, researchers should report the number of clusters and the heterogeneity among clusters. Additionally, Therefore, there will not be a universal threshold of clusters \( G^* \) beyond which we can be assured of effective inference. </li>
+                                <li>When the number of clusters is small or there are huge heterogeneity among clusters, the asymptotic standard errors usually fail to work effectively.</li>
+                                <li>In addition to the default asymptotic standard errors in Stata, it's always recommended to report p-values calculated using wilde bootstrap inference, especially restricted wild-cluster bootstrap (WCR).</li>
+                            </ol>
                         </p>
                     </div>
 

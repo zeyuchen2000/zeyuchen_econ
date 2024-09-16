@@ -4,6 +4,8 @@
     <title>Blog - Zeyu CHEN</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -107,7 +109,7 @@
                         </p>
 
                         <p>
-                            这是当时组会上分享过的文章，是关于聚类稳健推断在这几年形成的一些理论共识。在原文的基础上，我补充了不少以前读过的相关文献，汇总成了一个更丰富的<a href="blogs/files/cluster_slides.pdf", target="_blank">[Slides]</a>，供大家参考。其中，重要信息已由双下划线标注，此外我也标准了一些重要方法在Stata中如何使用。
+                            这是当时组会上分享过的文章，是关于聚类稳健推断在这几年形成的一些理论共识。在原文的基础上，我补充了不少以前读过的相关文献，汇总成了一个更丰富的<a href="blogs/files/cluster_slides.pdf", target="_blank">[Slides]</a>(也有<a href="blogs/files/cluster_slides_cn.pdf", target="_blank">[中文版]</a>，不过英文版有一些修订)，供大家参考。其中，重要结论已由下划线标注，可供大家快速浏览。此外我也标注了一些重要的推断方法如何在Stata中使用。
                         </p>    
                         
                         <p>
@@ -126,7 +128,7 @@
                                 </li>
                                 <li>有一些用来判断聚类层级的预检验方法，但任何预检验方法如果没有与后续的统计推断一并进行联合假设检验，则均会导致过度拒绝原假设。建议以上述第ii个经验法则为准。</li>
                                 <li>DD方法在国内研究者中流传甚广的“安慰剂检验”是用来辅助统计推断的(Chetty et al., 2009, <em>AER</em>)，而无法说明因果识别的好坏。(在国内，误用非常普遍！)</li>
-                                <li>存在聚类结构时，决定中心极限定理效果好坏的关键在于聚类数量与聚类间的差异性，而非仅仅是样本数量。</li>
+                                <li>存在聚类结构时，决定中心极限定理效果好坏的关键在于聚类数量与聚类间的差异性，而非仅仅是样本数量。因此，一方面，不会有一个普适的最小聚类数量\( G^* \)能保证当我们的聚类数量比它大时便可高枕无忧；另一方面，研究者理应在文章中汇报聚类的数量及其异质性(比如样本在聚类间的分布、聚类杠杆值等等)</li>
                                 <li>如果聚类数量很少或聚类之间差异很大，考虑聚类的渐进标准误就不太好用了，因为其依赖于中心极限定理成立。</li>
                                 <li>除了汇报常用的渐进标准误，大多数情况下都建议大家另外再汇报由带约束条件的原始聚类自助法(restricted wild-cluster bootstrap)计算出的p值。</li>
                             </ol>
