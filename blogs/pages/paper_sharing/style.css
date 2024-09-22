@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'Canger2';
+    src: url('../../../fonts/Cangerjinkai02-W02.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Canger';
+    src: url('../../../fonts/Cangerjinkai02-W04.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans Light';
+    src: url('../../../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../../../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Carlito";
+    src: url('../../../fonts/Carlito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Carlito";
+    src: url('../../../fonts/Carlito-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Carlito";
+    src: url('../../../fonts/Carlito-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Carlito";
+    src: url('../../../fonts/Carlito-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: #484848;
+    line-height: 1.3;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #0000EE;
+}
+
+a:hover {
+    color: #DD6800;
+}
+
+#header {
+    text-align: center;
+    padding-top: 52px;
+    padding-bottom: 20px;
+}
+
+#name {
+    font-size: 40px;
+    text-align: center;
+    color: #484848;
+}
+
+#navigation {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    font-size: 15px;
+    color: #8e8e8e;
+    position: relative;
+}
+
+#navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+#navigation ul:before, #navigation ul:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #d0d0d0;
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 230px);
+    margin-top: -1px;
+}
+
+#navigation ul:before {
+    left: 0;
+}
+
+#navigation ul:after {
+    right: 0;
+}
+
+#navigation li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#navigation li:hover, #navigation li:active {
+    background-color: #f6f6f6;
+    color: #484848;
+}
+
+#navigation .li_active {
+    background-color: #f6f6f6;
+    color: #484848;
+}
+
+#navigation a, #navigation a:visited {
+    display: block;
+    color: inherit;
+    padding: 10px 20px;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px; 
+}
+
+
+#main {
+    flex: 1 1 600px;
+    min-height: 100px;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+
+#main h2 {
+    font-size: 20px;
+}
+
+
+.abstract {
+    font-size: 15px;
+    font-family: "Carlito", sans-serif;
+    line-height: 1.2; 
+    margin-top: 5px;
+}
+
+.presented {
+    margin-left: 1.5em;
+    display: block;
+}
+
+#author a {
+    color: #484848
+}
+
+#author a:hover {
+    color: #DD6800;
+}
+
+.blog_title { 
+    font-size: 20px; 
+    font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
+    font-weight: bold;
+} 
+
+.date{ 
+    font-size: 12px; 
+    font-family: 'OpenSans', sans-serif; 
+    letter-spacing: 1px;
+}
+
+.blog_div{
+    border-bottom: 1px solid #d0d0d0;
+}
+
+#blog_language_button {
+    color: #484848;
+    text-align: right;
+    
+}
+
+#blog_language_button a, #paper a {
+    color: #484848;
+}
+
+#blog_language_button a:hover, #paper a:hover {
+    color: #DD6800;
+}
+
+#footer {
+    border-top: 1px solid #d0d0d0;
+    color: #9BA1A6;
+    font-size: 12px;
+    font-family: 'OpenSans', sans-serif;
+    text-align: right;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 900px;
+    min-height: 100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
