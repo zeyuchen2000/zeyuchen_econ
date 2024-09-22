@@ -162,6 +162,12 @@ a:hover {
     font-size: 20px;
 }
 
+.theorem {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #484848;
+}
 
 .abstract {
     font-size: 15px;
