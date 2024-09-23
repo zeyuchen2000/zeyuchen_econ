@@ -162,6 +162,14 @@ a:hover {
     font-size: 20px;
 }
 
+#note a {
+    color: #484848    
+}
+
+#note a:hover {
+    color: #DD6800;
+}
+
 .theorem {
     margin: 20px 0;
     padding: 15px;
