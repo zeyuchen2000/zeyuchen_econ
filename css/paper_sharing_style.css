@@ -170,6 +170,14 @@ a:hover {
     color: #DD6800;
 }
 
+#article_list a {
+    color: #484848    
+}
+
+#article_list a:hover {
+    color: #DD6800;
+}
+
 .theorem {
     margin: 20px 0;
     padding: 15px;

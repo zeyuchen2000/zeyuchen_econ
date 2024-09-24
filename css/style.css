@@ -271,19 +271,20 @@ div.info_content {
     border-bottom: 1px solid #d0d0d0;
 }
 
-#blog_language_button {
+#blog_language_button, #paper_sharing_button{
     color: #484848;
     text-align: right;
     
 }
 
-#blog_language_button a, #paper a {
+#blog_language_button a, #paper a, #paper_sharing_button a{
     color: #484848;
 }
 
-#blog_language_button a:hover, #paper a:hover {
+#blog_language_button a:hover, #paper a:hover, #paper_sharing_button a:hover{
     color: #DD6800;
 }
+
 
 #footer {
     border-top: 1px solid #d0d0d0;
