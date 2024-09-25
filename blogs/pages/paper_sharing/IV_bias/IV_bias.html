@@ -1,0 +1,138 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zeyu CHEN</title>
+    <link rel="stylesheet" href="https://www.zeyuchen.top/css/paper_sharing_style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript">
+        window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+           displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+
+<body>
+    <div id="header">
+        <a href="https://www.zeyuchen.top" id="name">Zeyu CHEN</a>
+    </div>
+
+    <div id="wrapper">
+        <div id="navigation">
+            <ul>
+                <li id="home" style="position: relative">
+                    <a href="https://www.zeyuchen.top"> HOME </a>
+                </li>
+                <li id="research" style="position: relative">
+                    <a href="https://www.zeyuchen.top/research.html"> RESEARCH </a>
+                </li>
+                <li id="blog" class="li_active" style="position: relative">
+                    <a href="https://www.zeyuchen.top/blog.html"> BLOG </a>
+                </li>
+                <li id="cv" style="position: relative">
+                    <a href="https://www.zeyuchen.top/assets/Zeyuchen_CV.pdf"> CV </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <h1>我们能在多大程度上相信工具变量估计的结果？</h1>
+
+            <p class="date">2022-06-15</p>
+            
+            <p></p>
+
+            <p><em>Paper: Lal, Apoorva and Lockhart, Mackenzie William and Xu, Yiqing and Zu, Ziwen, 
+                "<span id="article_list"><a href="https://ssrn.com/abstract=3905329" target="_blank">How Much Should We Trust Instrumental Variable Estimates in Political Science? Practical Advice based on Over 60 Replicated Studies</a></span>," Working Paper (SSRN), 2021.
+            </em></p>
+
+            <p id="note"><em>
+                I had the honor of presenting this paper at the China Economic Transition Workshop on March 23, 2022.
+                <br/>This article can also be found here: <a href="https://mp.weixin.qq.com/s/d4rej1a29-OyRIrXhtLBng", target="_blank"> https://mp.weixin.qq.com/s/d4rej1a29-OyRIrXhtLBng</a>
+            </em></p>
+
+            <h2>一、问题的提出</h2>
+
+            <p>工具变量估计是实证研究中缓解内生性问题的重要方法，随着工具变量方法的广泛运用，学界越来越关心工具变量的有效性与使用过程中的严谨性。已经有一些学者指出，利用IV估计得到的因果效应往往要比OLS大很多。然而，这并不是因为内生性通常使得OLS低估因果效应。正如姜纬老师在2017年发表的文章“Have Instrumental Variables Brought Us Closer to the Truth”中所指出的，在金融领域中，有大约70%的文章的内生性是使得OLS高估因果效应的。此时，如果IV估计得到的是真实的因果效应，那么理应小于OLS的估计结果。正因如此，当我们发现绝大部分的文章的IV估计结果大于OLS时，我们就必须要怀疑这些IV估计的可靠性了。</p>
+
+            <p>在本推文所介绍的文章中，作者考察了政治学领域中使用工具变量方法的文章，发现了同样的问题。作者强调，这一现象的出现并非客观原因，而是部分研究者在使用工具变量方法时不够谨慎，比如没有汇报2SLS中第一阶段的F统计量、没有选用合适的标准误、使用弱工具变量进行估计等。这些做法导致了一个不好的后果：在工具变量排他性约束不完全满足的情况下，弱工具变量放大了IV估计的偏误，甚至比OLS的偏误还要更大。随后，作者推荐了一个间接检验工具变量排他性约束的方法Zero-first-stage test，并且推荐了一种在排他性约束不完全满足时的修正方法。</p>
+
+            <h2>二、工具变量方法的简要回顾及其潜在陷阱</h2>
+
+            <p>这一部分将简要回顾工具变量方法，并尝试在理论上寻找可能导致IV估计结果比OLS估计结果大很多的原因。假设考察$x$对$y$的因果效应，$z$是$x$的工具变量，则有：
+                $$\text{Structural equation: } y_i=\alpha + \beta x_i+\varepsilon_i \tag{1}$$
+                $$\text{First-stage equation: } x_i = \pi_0 + \pi_1 z_i + \nu_i \tag{2}$$
+                $$\text{Reduced-form: } y_i=\underbrace{(\alpha+\beta\pi_0)}_{\gamma_0}+\underbrace{(\beta\pi_1)}_{\gamma_1}z_i+(\beta\nu_i+\varepsilon_i) \tag{3}$$
+            在单变量的情形下，2SLS估计量(由于原文主要讨论通过2SLS方法得到的IV估计量，为方便表述，推文中混用了这两个概念，以下均称为IV估计量)的表达时为式(4)，这一表达式也等价于$\hat{\gamma}_1^{OLS}/\hat{\pi}_1^{OLS}$。
+                $$\hat{\beta}^{IV}=\frac{\sum_i(z_i-\bar{z})y_i}{\sum_i(z_i-\bar{z})x_i} \tag{4}$$
+            在大样本情形下，这一估计量依概率收敛于式(5)。
+                $$\hat{\beta}^{IV}=\frac{\sum_i(z_i-\bar{z})y_i}{\sum_i(z_i-\bar{z})x_i}=\frac{\sum_i(z_i-\bar{z})(\alpha+\beta x_i+\varepsilon_i)}{\sum_i(z_i-\bar{z})x_i}=\beta+\frac{\sum_i(z_i-\bar{z})\varepsilon_i}{\sum_i(z_i-\bar{z})x_i}\to_p\beta+\frac{cov(z_i,\varepsilon_i)}{cov(z_i,x_i)} \tag{5}$$
+            这就自然而然地引出了对工具变量的两个重要假设：
+                <ol>
+                    <li>相关性，即要求$cov(z_i, x_i)\neq 0$，也就是要求工具变量与内生变量存在相关性，根据相关性的强弱可以将工具变量分为强工具变量与弱工具变量</li>
+                    <li>排他性，即要求$cov(z_i,\varepsilon_i) = 0$，换句话说，除了通过影响$x$进而影响$y$，变量$z$不可以再通过其他渠道对$y$产生影响。当这两个假设满足的时候，$\hat{\beta}^{IV}$是对$\beta$的一致估计。</li>
+                </ol>
+            </p> 
+
+            <p>根据是否满足两个前提假设，可以将工具变量估计分为四种情形，除去完美符合两个假设的情形，还余下三种可能导致偏误的情形。</p>
+
+            <p><strong>情形一：工具变量满足排他性，但相关性较弱。</strong>在这种情况下，$\hat{\beta}^{IV}$依然是$\beta$的一致估计，但是相关性较弱会导致IV估计量变得不精确(imprecision)。这是因为存在以下关系：
+                $$var[\hat{\beta}^{IV}]=var[\hat{\beta}^{OLS}]/R_{xz}^2 \tag{6}$$
+            如果工具变量相关性较弱，第一阶段回归的$R^2$就会很小(上式分母很小)，$\hat{\beta}^{IV}$的标准误就要比$\hat{\beta}^{OLS}$大很多；而且，由于$\hat{\beta}^{IV} = \hat{\gamma}_1 / \hat{\pi}_1$，当$\pi_1\approx 0$时，IV估计量的渐进正态性会难以满足。另外，在弱工具变量的情形下，IV估计量的有限样本性质并不优秀，因为IV估计量是有偏的，可以证明(请参考<em>Mostly Harmless Econometrics</em>，本推文介绍的原文中分母处似乎有误，这里有所修改)：
+                $$E[\hat{\beta}^{IV}-\beta]\approx\frac{\sigma_{\nu\varepsilon}}{\sigma_\nu^2}\cdot\frac1{F+1} \tag{7}$$
+            其中$F$代表第一阶段的F统计量。如果$\pi_1 \approx 0$，则$\nu \approx x$且$F \approx 0$，此时$E[\hat{\beta}^{IV}-\beta]\approx\sigma_{x\varepsilon}/\sigma_{x}^{2}=E[\hat{\beta}^{OLS}-\beta]$。也就是说，当工具变量非常弱的时候，IV估计量的期望值与真实值的偏差与OLS估计量由于内生性而导致的偏差是相近的。关于工具变量强弱，有一些判断的经验法则，比如第一阶段F统计量大于10。当然，近期有研究指出，只有当第一阶段F统计量大于等于104.7的时候，传统的t检验才能照常使用(Lee et al., 2020)。</p>
+
+            <p>余下两种情形涉及工具变量的排他性约束不满足的情况。在这种情况下，$\hat{\beta}^{IV}\nrightarrow_p\beta $，此时IV估计的结果与真实值也存在偏差，如式(8)所示，我们将这一偏差定义为$Bias^{IV}$。
+                $$\hat{\beta}^{IV}\to_p\beta+\frac{cov(z_i,\varepsilon_i)}{\underbrace{cov(z_i,x_i)}_{Bias^{IV}}} \tag{8}$$
+            同理，我们也可以定义出OLS估计中由于内生性而导致的估计偏差$Bias^{OLS}$，如式(9)。
+                $$\hat{\beta}^{OLS}\to_p\beta+\underbrace{\frac{cov(x_i,\varepsilon_i)}{var(x_i)}}_{Bias^{OLS}} \tag{9}$$
+            通过一系列等价变换，可以推导出$Bias^{IV}$和$Bias^{OLS}$之间的数量关系，式(10)中$\rho$代表相关系数：
+                $$Bias^{IV}=Bias^{OLS}\cdot\frac{\rho(z_i,\varepsilon_i)}{\rho(x_i,\varepsilon_i)}\cdot\frac1{\rho(z_i,x_i)} \tag{10}$$
+            虽然$\rho(z_i,\varepsilon_i ) \neq 0$，但是$\rho(z_i, \varepsilon_i ) <p \rho(x_i, \varepsilon_i)$往往是满足的，因此当排他性约束不满足的时候，工具变量的强弱决定了OLS估计与IV估计的偏误何者更大。于是有：</p>
+            
+            <p><strong>情形二：工具变量不满足排他性，但相关性较强。</strong>此时，虽然IV估计量是不一致的，但是偏差相比起OLS更小，IV估计量依然比OLS更接近真实值。</p>
+            
+            <p><strong>情形三：工具变量不满足排他性，而且相关性较弱。</strong>在这种情况下，IV估计的偏误甚至比OLS的偏误还要大。而且大多数情况下，$\rho(z_i, \varepsilon_i)$和$\rho(x_i, \varepsilon_i)$的符号是相同的，这就有可能导致前文提到的现象出现：尽管在某些研究中内生性的存在是使得OLS高估因果效应的，但IV的估计结果比OLS的估计结果还要大得多。</p>
+
+            <h2>三、现有研究中使用工具变量的问题</h2>
+
+            <p>在原文中，作者考察了2010年至2020年6月发表在政治学三大顶级期刊上(APSR、AJPS和JOP)使用了工具变量方法的文章。满足作者的筛选标准的文章一共有115篇，其中有61篇文章的结果能够实现复现；由于有3篇文章分别有两个不同的IV估计，因此最终一共有64个IV估计结果。作者在原文中将其归纳为4种不同的IV类型(Theory、Experiment、Rules & policy changes、Econometrics)，读者可以进一步参考原文，推文中不再详述。</p>
+
+            <h3>(一)第一阶段F统计量</h3>
+
+            <p>作者首先考察了这64个IV估计的第一阶段F统计量。作者利用对应的数据集重新估计了基于Bootstrap标准误的F统计量(如果数据可以聚类，则使用聚类的Bootstrap标准误)，并将其与原文中汇报的F统计量进行对比。之所以用基于Bootstrap标准误的F统计量作为参照，是因为它更加保守(也就是更小)。原文的附录展示了基于蒙特卡洛模拟得到的一组结论(Figure A11)：与其他F统计量对比，基于Bootstrap标准误的F统计量往往更小；当数据需要进行聚类而未采用聚类标准误时，得到的F统计量会大大高估工具变量的强度。</p>
+
+            (in progress)
+
+
+            <h2>五、总结</h2>
+
+            <p>最后，本推文将原文作者提出的九点建议与姜纬老师在“Have Instrumental Variables Brought Us Closer to the Truth”一文中提出的三大建议相结合，总结出以下十点使用工具变量方法时的注意事项，供读者参考：</p>
+
+            <ol>
+                <li>在使用工具变量方法之前，想清楚潜在的内生性是会使得因果效应被高估还是低估。如果担心的是OLS低估因果效应，而OLS的估计结果已经是显著的了，那么可能没必要使用IV估计。另外，在正式使用IV估计之前，最好先对可能存在的偏误进行一定篇幅的讨论。</li>
+                <li>在研究设计的阶段，就要先想好选用的工具变量能不能对x产生一个(准)随机的冲击。正如Rubin所说，在因果推断中，研究设计比后续分析更重要(design trumps analysis)。</li>
+                <li>在跑完第一阶段回归之后，画图看看$x$和$\hat{x}$之间的关系(当然，这里是指排除了各种协变量和固定效应之后)，先目测一下工具变量的相关性。</li>
+                <li>利用Bootstrap标准误来计算第一阶段的F统计量，如果数据是可以聚类的，则应该使用聚类的Bootstrap标准误。如果第一阶段的F统计量很大(比如说$F≥104.7$)，那么就可以继续下去。另外，工具变量的相关性强弱要公开透明，不要只汇报一个$R^2$，因为$R^2$大可能是因为协变量。</li>
+                <li>使用Bootstrap方法来计算2SLS的标准误和置信区间，以及要进行一些在弱工具变量的情况下也比较稳健的检验，比如AR test</li>
+                <li>如果预计内生性的存在会使得OLS高估因果效应，而随后用IV估计得到的结果比OLS还要大，则必须要谨慎对待这一结论。</li>
+                <li>如果有充分的理由相信，处理效应对于compliers产生的效果比其他群体的大很多，那么请认真分析这一群体，并提供令人信服的解释。</li>
+                <li>由于never-takers是进行ZFS test的合适群体，所以如果能够找到这么一个群体，请进行安慰剂检验，尝试说明IV不会对这一群体的$y$产生影响。</li>
+                <li>在第8的基础上，利用ZFS test的估计结果，使用LTZ correction修正IV的估计值和置信区间，并与原来的估计结果进行对比。</li>
+                <li>在使用工具变量方法估计出$x$对$y$的因果效应之后，一定不要忘记思考系数的现实意义。无论系数在统计上多么严谨，如果不符合现实，那也需要再好好琢磨。</li>
+            </ol>
+
+
+
+        </div>
+    </div>
+
+    <div id="footer">
+        &copy; 2024 Zeyu CHEN.
+    </div>
+   
+</body>
