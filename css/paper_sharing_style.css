@@ -127,13 +127,13 @@ a:hover {
 }
 
 #navigation li:hover, #navigation li:active {
-    background-color: #f6f6f6;
-    color: #484848;
+    background-color: #dddddd;
+    color: #666666;
 }
 
 #navigation .li_active {
-    background-color: #f6f6f6;
-    color: #484848;
+    background-color: #dddddd;
+    color: #666666;
 }
 
 #navigation a, #navigation a:visited {
