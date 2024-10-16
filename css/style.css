@@ -50,8 +50,9 @@ body {
     font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
     padding-left: 10%;
     padding-right: 10%;
-    color: #484848;
+    color: #dddddd;
     line-height: 1.3;
+    background-color: #666666;
 }
 
 div {
@@ -61,7 +62,7 @@ div {
 
 a, a:visited {
     text-decoration: none;
-    color: #004488;
+    color: #c0b283;
 }
 
 a:hover {
@@ -77,7 +78,7 @@ a:hover {
 #name {
     font-size: 40px;
     text-align: center;
-    color: #484848;
+    color: #dddddd;
 }
 
 #navigation {
@@ -87,7 +88,7 @@ a:hover {
     text-align: center;
     overflow: hidden;
     font-size: 15px;
-    color: #8e8e8e;
+    color: #bbbbbb;
     position: relative;
 }
 
@@ -105,7 +106,7 @@ a:hover {
     content: "";
     display: block;
     height: 1px;
-    background-color: #d0d0d0;
+    background-color: #dddddd;
     position: absolute;
     top: 50%;
     width: calc(50% - 230px);
@@ -165,7 +166,7 @@ a:hover {
 
 #information a, #information a:visited {
     text-decoration: none;
-    color: #484848;
+    color: #dddddd;
 }
 
 #information a:hover {
@@ -176,7 +177,7 @@ a:hover {
 div.info_title {
     font-family: 'OpenSans', "Carlito", 'Canger2', sans-serif;
     line-height: 1; 
-    color: #004488;
+    color: #c0b283;
     margin-bottom: 5px;
     margin-top: 15px;
     padding: 2px;
@@ -187,7 +188,7 @@ div.info_title {
 
 div.info_content {
     font-family: 'OpenSans', "Carlito", 'Canger', sans-serif;
-    color: #484848;
+    color: #dddddd;
     padding: 2px;
     padding-left: 4px;
     font-size: 12px;
@@ -247,7 +248,7 @@ div.info_content {
 }
 
 #author a {
-    color: #484848
+    color: #dddddd
 }
 
 #author a:hover {
@@ -272,13 +273,13 @@ div.info_content {
 }
 
 #blog_language_button, #paper_sharing_button{
-    color: #484848;
+    color: #dddddd;
     text-align: right;
     
 }
 
 #blog_language_button a, #paper a, #paper_sharing_button a{
-    color: #484848;
+    color: #dddddd;
 }
 
 #blog_language_button a:hover, #paper a:hover, #paper_sharing_button a:hover{
@@ -288,7 +289,7 @@ div.info_content {
 
 #footer {
     border-top: 1px solid #d0d0d0;
-    color: #9BA1A6;
+    color: #cccccc;
     font-size: 12px;
     font-family: 'OpenSans', sans-serif;
     text-align: right;
