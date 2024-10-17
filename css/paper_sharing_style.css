@@ -50,7 +50,7 @@ body {
     font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
     padding-left: 10%;
     padding-right: 10%;
-    color: #eeeeee;
+    color: #dddddd;
     line-height: 1.3;
     background-color: #8B7765;
 }
@@ -106,7 +106,7 @@ a:hover {
     content: "";
     display: block;
     height: 1px;
-    background-color: #eeeeee;
+    background-color: #dddddd;
     position: absolute;
     top: 50%;
     width: calc(50% - 230px);
@@ -127,12 +127,12 @@ a:hover {
 }
 
 #navigation li:hover, #navigation li:active {
-    background-color: #eeeeee;
+    background-color: #dddddd;
     color: #666666;
 }
 
 #navigation .li_active {
-    background-color: #eeeeee;
+    background-color: #dddddd;
     color: #666666;
 }
 
@@ -164,7 +164,7 @@ a:hover {
 }
 
 #note a {
-    color: #eeeeee
+    color: #dddddd
 }
 
 #note a:hover {
@@ -172,7 +172,7 @@ a:hover {
 }
 
 #article_list a {
-    color: #eeeeee
+    color: #dddddd
 }
 
 #article_list a:hover {
@@ -183,7 +183,7 @@ a:hover {
     margin: 20px 0;
     padding: 15px;
     background-color: #A58A6E;
-    border-left: 5px solid #eeeeee;
+    border-left: 5px solid #dddddd;
 }
 
 .abstract {
@@ -199,7 +199,7 @@ a:hover {
 }
 
 #author a {
-    color: #eeeeee
+    color: #dddddd
 }
 
 #author a:hover {
@@ -223,13 +223,13 @@ a:hover {
 }
 
 #blog_language_button {
-    color: #eeeeee;
+    color: #dddddd;
     text-align: right;
     
 }
 
 #blog_language_button a, #paper a {
-    color: #eeeeee;
+    color: #dddddd;
 }
 
 #blog_language_button a:hover, #paper a:hover {
