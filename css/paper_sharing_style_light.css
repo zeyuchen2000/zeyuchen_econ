@@ -128,11 +128,13 @@ a:hover {
 #navigation li:hover, #navigation li:active {
     background-color: #f6f6f6;
     color: #484848;
+    border-radius: 15px;
 }
 
 #navigation .li_active {
     background-color: #f6f6f6;
     color: #484848;
+    border-radius: 15px;
 }
 
 #navigation a, #navigation a:visited {
