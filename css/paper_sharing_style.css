@@ -88,7 +88,7 @@ a:hover {
     text-align: center;
     overflow: hidden;
     font-size: 15px;
-    color: #bbbbbb;
+    color: #cccccc;
     position: relative;
 }
 
@@ -128,12 +128,14 @@ a:hover {
 
 #navigation li:hover, #navigation li:active {
     background-color: #dddddd;
-    color: #666666;
+    color: #8B7765;
+    border-radius: 15px;
 }
 
 #navigation .li_active {
     background-color: #dddddd;
-    color: #666666;
+    color: #8B7765;
+    border-radius: 15px;
 }
 
 #navigation a, #navigation a:visited {
