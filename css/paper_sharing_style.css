@@ -47,7 +47,7 @@
 }
 
 body {
-    font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
+    font-family: "Carlito", 'Canger', sans-serif;
     padding-left: 10%;
     padding-right: 10%;
     color: #dddddd;
@@ -78,7 +78,7 @@ a:hover {
 #name {
     font-size: 40px;
     text-align: center;
-    color: #ffffff;
+    color: #eeeeee;
 }
 
 #navigation {
@@ -190,7 +190,7 @@ a:hover {
 
 .abstract {
     font-size: 15px;
-    font-family: "Carlito", sans-serif;
+    font-family: "Carlito", 'Canger', sans-serif;
     line-height: 1.2; 
     margin-top: 5px;
 }
@@ -210,7 +210,7 @@ a:hover {
 
 .blog_title { 
     font-size: 20px; 
-    font-family: 'Gill Sans MT', "Carlito", 'Canger', sans-serif;
+    font-family: "Carlito", 'Canger', sans-serif;
     font-weight: bold;
 } 
 
