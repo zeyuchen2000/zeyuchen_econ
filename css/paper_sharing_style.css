@@ -173,11 +173,15 @@ a:hover {
     color: #DD6800;
 }
 
-#article_list a {
+#article_title {
+    font-size: 20px;
+}
+
+#article_title a {
     color: #dddddd
 }
 
-#article_list a:hover {
+#article_title a:hover {
     color: #DD6800;
 }
 
