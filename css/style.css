@@ -79,6 +79,8 @@ a:hover {
     font-size: 40px;
     text-align: center;
     color: #eeeeee;
+    font-family: 'OpenSans', 'Carlito', 'Canger', sans-serif;
+    letter-spacing: 1px;
 }
 
 #navigation {
@@ -90,6 +92,7 @@ a:hover {
     font-size: 15px;
     color: #cccccc;
     position: relative;
+    font-family: 'OpenSans', 'Carlito', 'Canger', sans-serif;
 }
 
 #navigation ul {
