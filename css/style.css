@@ -130,13 +130,17 @@ a:hover {
     margin: 0 10px;
 }
 
-#navigation li:hover, #navigation li:active {
+#navigation li:hover {
+    color: #dddddd;
+}
+
+#navigation .li_active {
     background-color: #dddddd;
     color: #8B7765;
     border-radius: 15px;
 }
 
-#navigation .li_active {
+#navigation .li_active:hover {
     background-color: #dddddd;
     color: #8B7765;
     border-radius: 15px;
