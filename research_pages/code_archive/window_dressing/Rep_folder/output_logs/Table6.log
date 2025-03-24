@@ -1,0 +1,195 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\Table6.log
+  log type:  text
+ opened on:  20 Feb 2024, 01:15:06
+
+. 
+. global cov lngdp lnp max_temp min_temp windpow
+
+. 
+. use "Rep_folder\data\Shandong_sample.dta", clear
+
+. cap drop post dudt
+
+. gen post = (ym>=201703)
+
+. gen dudt = post * boundary
+
+. est drop _all
+
+. 
+. ** JAPCP-covered boundary
+. reghdfe ln_manu_num dudt $cov if hnhb==1|boundary==0, absorb(monitor_id ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 12 iterations)
+
+HDFE Linear regression                            Number of obs   =      4,656
+Absorbing 3 HDFE groups                           F(   6,     99) =       3.70
+Statistics robust to heteroskedasticity           Prob > F        =     0.0023
+                                                  R-squared       =     0.9555
+                                                  Adj R-squared   =     0.9537
+                                                  Within R-sq.    =     0.0255
+Number of clusters (monitor_id) =        100      Root MSE        =     0.1037
+
+                           (Std. err. adjusted for 100 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+ ln_manu_num | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |  -.0297399   .0271369    -1.10   0.276    -.0835853    .0241055
+       lngdp |   .1386725   .0446651     3.10   0.002     .0500473    .2272978
+         lnp |  -.3170578   .3411871    -0.93   0.355    -.9940469    .3599314
+    max_temp |  -.0065437   .0049131    -1.33   0.186    -.0162922    .0032049
+    min_temp |   .0103336   .0045665     2.26   0.026     .0012726    .0193946
+     windpow |   .0132758   .0178235     0.74   0.458    -.0220898    .0486414
+       _cons |   6.782813   1.464371     4.63   0.000     3.877182    9.688443
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |       100         100           0    *|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store hnhb_manu_num
+
+. reghdfe ln_supply_num dudt $cov if hnhb==1|boundary==0, absorb(monitor_id ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 12 iterations)
+
+HDFE Linear regression                            Number of obs   =      4,656
+Absorbing 3 HDFE groups                           F(   6,     99) =      10.36
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.9362
+                                                  Adj R-squared   =     0.9336
+                                                  Within R-sq.    =     0.1212
+Number of clusters (monitor_id) =        100      Root MSE        =     0.1036
+
+                           (Std. err. adjusted for 100 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+ln_supply_~m | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |   .0253567   .0525659     0.48   0.631    -.0789455    .1296589
+       lngdp |   .1803585   .0640241     2.82   0.006     .0533209    .3073962
+         lnp |  -.8217103   .1832181    -4.48   0.000    -1.185255   -.4581659
+    max_temp |  -.0147173   .0045435    -3.24   0.002    -.0237327    -.005702
+    min_temp |   .0145809   .0064395     2.26   0.026     .0018035    .0273582
+     windpow |    .065374   .0148617     4.40   0.000     .0358851    .0948629
+       _cons |   5.915715   .7652215     7.73   0.000     4.397349     7.43408
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |       100         100           0    *|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store hnhb_supply_num
+
+. 
+. ** JAPCP-uncovered boundary
+. reghdfe ln_manu_num dudt $cov if js==1|boundary==0, absorb(monitor_id ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 13 iterations)
+
+HDFE Linear regression                            Number of obs   =      4,426
+Absorbing 3 HDFE groups                           F(   6,     92) =      10.13
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.9620
+                                                  Adj R-squared   =     0.9604
+                                                  Within R-sq.    =     0.0848
+Number of clusters (monitor_id) =         93      Root MSE        =     0.0993
+
+                            (Std. err. adjusted for 93 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+ ln_manu_num | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |   .0233659   .0135151     1.73   0.087    -.0034762    .0502079
+       lngdp |   .1017997   .0461601     2.21   0.030     .0101218    .1934776
+         lnp |   .9865851   .2634229     3.75   0.000     .4634045    1.509766
+    max_temp |  -.0042017   .0047455    -0.89   0.378    -.0136267    .0052232
+    min_temp |   .0069674   .0047258     1.47   0.144    -.0024184    .0163531
+     windpow |   .0205842   .0181567     1.13   0.260    -.0154767     .056645
+       _cons |   1.449793   1.130709     1.28   0.203    -.7958925    3.695479
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |        93          93           0    *|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store js_manu_num
+
+. reghdfe ln_supply_num dudt $cov if js==1|boundary==0, absorb(monitor_id ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 13 iterations)
+
+HDFE Linear regression                            Number of obs   =      4,426
+Absorbing 3 HDFE groups                           F(   6,     92) =      16.49
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.9416
+                                                  Adj R-squared   =     0.9392
+                                                  Within R-sq.    =     0.0965
+Number of clusters (monitor_id) =         93      Root MSE        =     0.1012
+
+                            (Std. err. adjusted for 93 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+ln_supply_~m | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |   .0364054   .0199683     1.82   0.072    -.0032535    .0760642
+       lngdp |   .1497315   .0658408     2.27   0.025     .0189659    .2804971
+         lnp |   -.145493   .3039736    -0.48   0.633    -.7492108    .4582249
+    max_temp |  -.0118378   .0042608    -2.78   0.007    -.0203001   -.0033755
+    min_temp |   .0098733   .0066933     1.48   0.144    -.0034201    .0231667
+     windpow |   .0740989   .0146273     5.07   0.000     .0450478    .1031501
+       _cons |   3.191615   1.167561     2.73   0.008     .8727387    5.510491
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |        93          93           0    *|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store js_supply_num
+
+. 
+. esttab hnhb_* js_*, mtitle se(%6.3f) b(%6.3f) ar2 star(* 0.1 ** 0.05 *** 0.01) keep(dudt)
+
+----------------------------------------------------------------------------
+                      (1)             (2)             (3)             (4)   
+             hnhb_manu_~m    hnhb_suppl~m     js_manu_num    js_supply_~m   
+----------------------------------------------------------------------------
+dudt               -0.030           0.025           0.023*          0.036*  
+                  (0.027)         (0.053)         (0.014)         (0.020)   
+----------------------------------------------------------------------------
+N                    4656            4656            4426            4426   
+adj. R-sq           0.954           0.934           0.960           0.939   
+----------------------------------------------------------------------------
+Standard errors in parentheses
+* p<0.1, ** p<0.05, *** p<0.01
+
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\Table6.log
+  log type:  text
+ closed on:  20 Feb 2024, 01:15:07
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

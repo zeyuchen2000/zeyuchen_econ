@@ -1,0 +1,285 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\TableA2.log
+  log type:  text
+ opened on:  20 Feb 2024, 01:18:49
+
+. 
+. use "Rep_folder\data\Shandong_sample.dta", clear
+
+. replace dist = dist / 10000
+(5,821 real changes made)
+
+. gen dist2 = dist ^ 2
+
+. gen lndist = ln(dist)
+
+. gen lnpergdp = ln(gdp / population)
+(492 missing values generated)
+
+. gen pol_num = C26 + C28 + C29 + C32 + C25 + C30 + C31
+(192 missing values generated)
+
+. gen ln_pol_num = ln(C26 + C28 + C29 + C32 + C25 + C30 + C31)
+(192 missing values generated)
+
+. 
+. reghdfe lngdp dist c.dist#post, absorb(ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 10 iterations)
+
+HDFE Linear regression                            Number of obs   =      4,944
+Absorbing 2 HDFE groups                           F(   2,    104) =       1.04
+Statistics robust to heteroskedasticity           Prob > F        =     0.3579
+                                                  R-squared       =     0.1277
+                                                  Adj R-squared   =     0.1148
+                                                  Within R-sq.    =     0.0151
+Number of clusters (monitor_id) =        105      Root MSE        =     0.5333
+
+                           (Std. err. adjusted for 105 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+       lngdp | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dist |  -.0056335   .0041948    -1.34   0.182     -.013952     .002685
+             |
+ post#c.dist |
+          1  |   -.000057   .0018875    -0.03   0.976       -.0038    .0036861
+             |
+       _cons |    6.44816   .0979735    65.82   0.000     6.253875    6.642446
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+
+. est store lngdp1
+
+. reghdfe lngdp dist dist2 c.dist#post c.dist2#post, absorb(ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 10 iterations)
+
+HDFE Linear regression                            Number of obs   =      4,944
+Absorbing 2 HDFE groups                           F(   4,    104) =      11.99
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.2697
+                                                  Adj R-squared   =     0.2586
+                                                  Within R-sq.    =     0.1755
+Number of clusters (monitor_id) =        105      Root MSE        =     0.4881
+
+                           (Std. err. adjusted for 105 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+       lngdp | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dist |   .0668737    .010851     6.16   0.000     .0453558    .0883916
+       dist2 |  -.0015552   .0002599    -5.98   0.000    -.0020705   -.0010398
+             |
+ post#c.dist |
+          1  |  -.0148835    .006197    -2.40   0.018    -.0271724   -.0025946
+             |
+post#c.dist2 |
+          1  |   .0003301   .0001245     2.65   0.009     .0000832     .000577
+             |
+       _cons |   5.953181   .1090841    54.57   0.000     5.736863    6.169498
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+
+. est store lngdp2
+
+. 
+. reghdfe lnp dist c.dist#post, absorb(ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 10 iterations)
+
+HDFE Linear regression                            Number of obs   =      5,082
+Absorbing 2 HDFE groups                           F(   2,    104) =       8.79
+Statistics robust to heteroskedasticity           Prob > F        =     0.0003
+                                                  R-squared       =     0.1427
+                                                  Adj R-squared   =     0.1304
+                                                  Within R-sq.    =     0.0973
+Number of clusters (monitor_id) =        105      Root MSE        =     0.3823
+
+                           (Std. err. adjusted for 105 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+         lnp | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dist |  -.0118553   .0030231    -3.92   0.000    -.0178502   -.0058603
+             |
+ post#c.dist |
+          1  |   .0019433   .0010626     1.83   0.070    -.0001639    .0040505
+             |
+       _cons |    4.45825   .0674125    66.13   0.000     4.324569    4.591932
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+
+. est store lnp
+
+. reghdfe windpow dist c.dist#post, absorb(ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 10 iterations)
+
+HDFE Linear regression                            Number of obs   =      5,396
+Absorbing 2 HDFE groups                           F(   2,    109) =     204.88
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.7170
+                                                  Adj R-squared   =     0.7132
+                                                  Within R-sq.    =     0.4435
+Number of clusters (monitor_id) =        110      Root MSE        =     0.5269
+
+                           (Std. err. adjusted for 110 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+     windpow | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dist |   .0463459   .0025073    18.48   0.000     .0413765    .0513152
+             |
+ post#c.dist |
+          1  |  -.0088154   .0017511    -5.03   0.000    -.0122859   -.0053448
+             |
+       _cons |   2.109826   .0639903    32.97   0.000        1.983    2.236653
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+          ym |        60           0          60     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+
+. est store windpow
+
+. 
+. * Whether more heavily polluting enterprises agglomerated at boundaries before JAPCP
+. reghdfe industry_num dist lngdp lnp windpow if year<2017, absorb(ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 9 iterations)
+
+HDFE Linear regression                            Number of obs   =      1,712
+Absorbing 2 HDFE groups                           F(   4,     81) =      20.53
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.5214
+                                                  Adj R-squared   =     0.5105
+                                                  Within R-sq.    =     0.4723
+Number of clusters (monitor_id) =         82      Root MSE        =   169.5792
+
+                            (Std. err. adjusted for 82 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+industry_num | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dist |    3.96504   2.034596     1.95   0.055    -.0831669    8.013248
+       lngdp |   229.6055   57.67332     3.98   0.000     114.8537    344.3573
+         lnp |   155.7245   66.92676     2.33   0.022     22.56126    288.8878
+     windpow |    30.8678   25.92773     1.19   0.237    -20.72025    82.45585
+       _cons |   -1959.41    258.022    -7.59   0.000    -2472.793   -1446.027
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+          ym |        24           0          24     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+
+. est store ind
+
+. reghdfe pol_num dist lngdp lnp windpow if year<2017, absorb(ym winddir) cluster(monitor_id)
+(MWFE estimator converged in 9 iterations)
+
+HDFE Linear regression                            Number of obs   =      1,930
+Absorbing 2 HDFE groups                           F(   4,     91) =       6.73
+Statistics robust to heteroskedasticity           Prob > F        =     0.0001
+                                                  R-squared       =     0.2174
+                                                  Adj R-squared   =     0.2016
+                                                  Within R-sq.    =     0.1507
+Number of clusters (monitor_id) =         92      Root MSE        =   295.5724
+
+                            (Std. err. adjusted for 92 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+     pol_num | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dist |  -5.094798   2.983115    -1.71   0.091    -11.02039    .8307928
+       lngdp |   226.5614   71.18097     3.18   0.002     85.16913    367.9536
+         lnp |  -117.8683   99.78258    -1.18   0.241    -316.0742     80.3375
+     windpow |  -39.16433   54.04546    -0.72   0.471     -146.519    68.19034
+       _cons |  -11.00979   424.4239    -0.03   0.979    -854.0757    832.0561
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+          ym |        24           0          24     |
+     winddir |        12           1          11     |
+-----------------------------------------------------+
+
+. est store pol
+
+. 
+. esttab lngdp* lnp windpow ind pol, mtitle se(%6.3f) b(%6.3f) ar2 star(* 0.1 ** 0.05 *** 0.01)
+
+------------------------------------------------------------------------------------------------------------
+                      (1)             (2)             (3)             (4)             (5)             (6)   
+                   lngdp1          lngdp2             lnp         windpow             ind             pol   
+------------------------------------------------------------------------------------------------------------
+dist               -0.006           0.067***       -0.012***        0.046***        3.965*         -5.095*  
+                  (0.004)         (0.011)         (0.003)         (0.003)         (2.035)         (2.983)   
+
+0.post#c.d~t        0.000           0.000           0.000           0.000                                   
+                      (.)             (.)             (.)             (.)                                   
+
+1.post#c.d~t       -0.000          -0.015**         0.002*         -0.009***                                
+                  (0.002)         (0.006)         (0.001)         (0.002)                                   
+
+dist2                              -0.002***                                                                
+                                  (0.000)                                                                   
+
+0.post#c.d~2                        0.000                                                                   
+                                      (.)                                                                   
+
+1.post#c.d~2                        0.000***                                                                
+                                  (0.000)                                                                   
+
+lngdp                                                                             229.605***      226.561***
+                                                                                 (57.673)        (71.181)   
+
+lnp                                                                               155.725**      -117.868   
+                                                                                 (66.927)        (99.783)   
+
+windpow                                                                            30.868         -39.164   
+                                                                                 (25.928)        (54.045)   
+
+_cons               6.448***        5.953***        4.458***        2.110***     -2.0e+03***      -11.010   
+                  (0.098)         (0.109)         (0.067)         (0.064)       (258.022)       (424.424)   
+------------------------------------------------------------------------------------------------------------
+N                    4944            4944            5082            5396            1712            1930   
+adj. R-sq           0.115           0.259           0.130           0.713           0.510           0.202   
+------------------------------------------------------------------------------------------------------------
+Standard errors in parentheses
+* p<0.1, ** p<0.05, *** p<0.01
+
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\TableA2.log
+  log type:  text
+ closed on:  20 Feb 2024, 01:18:50
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

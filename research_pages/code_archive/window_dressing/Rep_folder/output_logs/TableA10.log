@@ -1,0 +1,214 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\TableA10.log
+  log type:  text
+ opened on:  20 Feb 2024, 01:26:10
+
+. 
+. use "Rep_folder\data\Full_sample.dta", clear
+
+. keep if prov=="江苏"
+(31,320 observations deleted)
+
+. replace city = city + "市"
+(1,728 real changes made)
+
+. gen post = (ym>=201702)
+
+. cap drop dudt
+
+. gen dudt = boundary * post
+
+. 
+. cap drop lngdp lnp
+
+. gen lngdp = ln(gdp)
+
+. gen lnp = ln(population)
+
+. 
+. merge m:1 city year using "Rep_folder\data\Jiangsu_enterprises.dta"
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,728  (_merge==3)
+    -----------------------------------------
+
+. gen lnC26 = ln(C26)
+
+. gen lnC28 = ln(C28)
+
+. gen lnC29 = ln(C29)
+
+. gen lnC32 = ln(C32)
+
+. 
+. reghdfe lnC26 dudt lngdp lnp max_temp min_temp wind, absorb(monitor_id ym) cluster(monitor_id)
+(MWFE estimator converged in 4 iterations)
+
+HDFE Linear regression                            Number of obs   =      1,728
+Absorbing 2 HDFE groups                           F(   6,     33) =     197.12
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.9360
+                                                  Adj R-squared   =     0.9322
+                                                  Within R-sq.    =     0.3364
+Number of clusters (monitor_id) =         34      Root MSE        =     0.1181
+
+                            (Std. err. adjusted for 34 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+       lnC26 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |  -.0381991     .03306    -1.16   0.256    -.1054601     .029062
+       lngdp |   1.014535   .9730861     1.04   0.305    -.9652237    2.994294
+         lnp |  -22.58836    2.21716   -10.19   0.000    -27.09921   -18.07752
+    max_temp |  -.0039308   .0070316    -0.56   0.580    -.0182367     .010375
+    min_temp |   .0082362   .0069754     1.18   0.246    -.0059554    .0224278
+        wind |   .0182532   .0118887     1.54   0.134    -.0059345    .0424409
+       _cons |   144.8475   17.14086     8.45   0.000     109.9742    179.7209
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |        34          34           0    *|
+          ym |        60           0          60     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store js_p_C26
+
+. reghdfe lnC28 dudt lngdp lnp max_temp min_temp wind, absorb(monitor_id ym) cluster(monitor_id)
+(MWFE estimator converged in 4 iterations)
+
+HDFE Linear regression                            Number of obs   =      1,728
+Absorbing 2 HDFE groups                           F(   6,     33) =      42.00
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.9074
+                                                  Adj R-squared   =     0.9017
+                                                  Within R-sq.    =     0.0415
+Number of clusters (monitor_id) =         34      Root MSE        =     0.2094
+
+                            (Std. err. adjusted for 34 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+       lnC28 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |  -.1324146   .1291193    -1.03   0.313    -.3951097    .1302805
+       lngdp |   .8274215   .9240693     0.90   0.377    -1.052612    2.707455
+         lnp |   6.689563   9.701841     0.69   0.495    -13.04898    26.42811
+    max_temp |  -.0450656   .0178775    -2.52   0.017    -.0814376   -.0086935
+    min_temp |    .060786   .0214417     2.83   0.008     .0171624    .1044095
+        wind |   .0526103   .0210659     2.50   0.018     .0097514    .0954692
+       _cons |  -47.89186   65.40858    -0.73   0.469    -180.9666    85.18289
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |        34          34           0    *|
+          ym |        60           0          60     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store js_p_C28
+
+. reghdfe lnC29 dudt lngdp lnp max_temp min_temp wind, absorb(monitor_id ym) cluster(monitor_id)
+(MWFE estimator converged in 4 iterations)
+
+HDFE Linear regression                            Number of obs   =      1,728
+Absorbing 2 HDFE groups                           F(   6,     33) =      15.30
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.8533
+                                                  Adj R-squared   =     0.8444
+                                                  Within R-sq.    =     0.0666
+Number of clusters (monitor_id) =         34      Root MSE        =     0.2111
+
+                            (Std. err. adjusted for 34 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+       lnC29 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |   .1230483   .0487158     2.53   0.017     .0239352    .2221615
+       lngdp |   2.693487   1.012535     2.66   0.012      .633468    4.753506
+         lnp |  -13.47428   5.550036    -2.43   0.021    -24.76592   -2.182651
+    max_temp |  -.0419379    .015666    -2.68   0.011    -.0738107   -.0100652
+    min_temp |   .0272487   .0108416     2.51   0.017     .0051912    .0493062
+        wind |  -.0274672   .0515979    -0.53   0.598    -.1324439    .0775095
+       _cons |   71.00487   40.86549     1.74   0.092     -12.1366    154.1463
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |        34          34           0    *|
+          ym |        60           0          60     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store js_p_C29
+
+. reghdfe lnC32 dudt lngdp lnp max_temp min_temp wind, absorb(monitor_id ym) cluster(monitor_id)
+(MWFE estimator converged in 4 iterations)
+
+HDFE Linear regression                            Number of obs   =      1,728
+Absorbing 2 HDFE groups                           F(   6,     33) =      11.74
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.9403
+                                                  Adj R-squared   =     0.9367
+                                                  Within R-sq.    =     0.0256
+Number of clusters (monitor_id) =         34      Root MSE        =     0.1030
+
+                            (Std. err. adjusted for 34 clusters in monitor_id)
+------------------------------------------------------------------------------
+             |               Robust
+       lnC32 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        dudt |   .0497643   .0479229     1.04   0.307    -.0477356    .1472641
+       lngdp |   .8757192   .8491238     1.03   0.310    -.8518362    2.603275
+         lnp |   .0948376   4.627721     0.02   0.984    -9.320332    9.510008
+    max_temp |  -.0204378   .0046542    -4.39   0.000    -.0299069   -.0109688
+    min_temp |   .0151518   .0042574     3.56   0.001     .0064901    .0238135
+        wind |  -.0095534   .0206875    -0.46   0.647    -.0516424    .0325357
+       _cons |  -4.171166   32.76645    -0.13   0.899    -70.83501    62.49267
+------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+  monitor_id |        34          34           0    *|
+          ym |        60           0          60     |
+-----------------------------------------------------+
+* = FE nested within cluster; treated as redundant for DoF computation
+
+. est store js_p_C32
+
+. 
+. esttab js_p_*, mtitle se(%6.3f) b(%6.3f) ar2 keep(dudt) star(* 0.1 ** 0.05 *** 0.01)
+
+----------------------------------------------------------------------------
+                      (1)             (2)             (3)             (4)   
+                 js_p_C26        js_p_C28        js_p_C29        js_p_C32   
+----------------------------------------------------------------------------
+dudt               -0.038          -0.132           0.123**         0.050   
+                  (0.033)         (0.129)         (0.049)         (0.048)   
+----------------------------------------------------------------------------
+N                    1728            1728            1728            1728   
+adj. R-sq           0.932           0.902           0.844           0.937   
+----------------------------------------------------------------------------
+Standard errors in parentheses
+* p<0.1, ** p<0.05, *** p<0.01
+
+. 
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\TableA10.log
+  log type:  text
+ closed on:  20 Feb 2024, 01:26:11
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,73 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\Table2.log
+  log type:  text
+ opened on:  20 Feb 2024, 01:13:26
+
+. 
+. use "Rep_folder\data\Shandong_sample.dta", clear
+
+. 
+. global list_industry manu_num supply_num key_num C26 C28 C29 C32 C25 C30 C31 
+
+. gen key_num = C26 + C28 + C29 + C32
+(192 missing values generated)
+
+. 
+. foreach i in $list_industry{
+  2. quietly sum `i' if boundary==0&year<2017
+  3. scalar non_boundary0 = r(mean)
+  4. quietly sum `i' if boundary==0&year>=2017
+  5. scalar non_boundary1 = r(mean)
+  6. dis "`i'" " (non_boundary): " (non_boundary1 - non_boundary0) / non_boundary0
+  7. 
+. quietly sum `i' if hnhb==1&boundary==1&year<2017
+  8. scalar hnhb0 = r(mean)
+  9. quietly sum `i' if hnhb==1&boundary==1&year>=2017
+ 10. scalar hnhb1 = r(mean)
+ 11. dis "`i'" " (JAPCP-covered boundary): " (hnhb1 - hnhb0) / hnhb0
+ 12. 
+. quietly sum `i' if js==1&boundary==1&year<2017
+ 13. scalar js0 = r(mean)
+ 14. quietly sum `i' if js==1&boundary==1&year>=2017
+ 15. scalar js1 = r(mean)
+ 16. dis "`i'" " (JAPCP-uncovered boundary): " (js1 - js0) / js0
+ 17. }
+manu_num (non_boundary): -.1931287
+manu_num (JAPCP-covered boundary): -.19013002
+manu_num (JAPCP-uncovered boundary): .08610906
+supply_num (non_boundary): .18926508
+supply_num (JAPCP-covered boundary): .27537081
+supply_num (JAPCP-uncovered boundary): .58730159
+key_num (non_boundary): -.15583366
+key_num (JAPCP-covered boundary): -.25749417
+key_num (JAPCP-uncovered boundary): .16708648
+C26 (non_boundary): -.18870857
+C26 (JAPCP-covered boundary): -.30532684
+C26 (JAPCP-uncovered boundary): .04029304
+C28 (non_boundary): .01606433
+C28 (JAPCP-covered boundary): -.2145809
+C28 (JAPCP-uncovered boundary): .75925926
+C29 (non_boundary): -.12710414
+C29 (JAPCP-covered boundary): -.15619068
+C29 (JAPCP-uncovered boundary): .25427949
+C32 (non_boundary): -.08208495
+C32 (JAPCP-covered boundary): -.20927952
+C32 (JAPCP-uncovered boundary): .63319946
+C25 (non_boundary): .01880017
+C25 (JAPCP-covered boundary): -.20711865
+C25 (JAPCP-uncovered boundary): .13187954
+C30 (non_boundary): -.19240195
+C30 (JAPCP-covered boundary): -.09059854
+C30 (JAPCP-uncovered boundary): .05010049
+C31 (non_boundary): -.58709773
+C31 (JAPCP-covered boundary): -.16155231
+C31 (JAPCP-uncovered boundary): -.3144208
+
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\Table2.log
+  log type:  text
+ closed on:  20 Feb 2024, 01:13:27
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

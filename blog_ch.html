@@ -83,7 +83,7 @@
                     
                     <div class="blog_div">
                         <p>
-                            <span class="blog_title" id="paper_sharing_button"><a href="blogs/pages/paper_sharing/index.html">论文分享合辑</a></span>
+                            <span class="blog_title" id="paper_sharing_button"><a href="blog_pages/paper_sharing/index.html">论文分享合辑</a></span>
                             <span> ← 此处记录了我为一些很棒的论文写的介绍性文章。</span>
                         </p>
                     </div>
@@ -151,12 +151,12 @@
                             2023-07-18
                         </p>
                             
-                        <p id="paper">
+                        <p>
                             文献：MacKinnon, James G., Morten Ørregaard Nielsen, and Matthew D. Webb, "<a href="https://doi.org/10.1016/j.jeconom.2022.04.001" target="_blank">Cluster-robust inference: A guide to empirical practice</a>," <em>Journal of Econometrics</em>, 232 (2023), 272–299.
                         </p>
 
                         <p>
-                            这是当时组会上分享过的文章，是关于聚类稳健推断在这几年形成的一些理论共识。在原文的基础上，我补充了不少以前读过的相关文献，汇总成了一个更丰富的<a href="blogs/files/cluster_slides.pdf", target="_blank">[Slides]</a>(也有<a href="blogs/files/cluster_slides_cn.pdf", target="_blank">[中文版]</a>，不过英文版有一些修订)，供大家参考。其中，重要结论已由下划线标注，可供大家快速浏览。此外我也标注了一些重要的推断方法如何在Stata中使用。
+                            这是当时组会上分享过的文章，是关于聚类稳健推断在这几年形成的一些理论共识。在原文的基础上，我补充了不少以前读过的相关文献，汇总成了一个更丰富的<a href="notes/cluster_slides.pdf", target="_blank">[Slides]</a>(也有<a href="notes/cluster_slides_cn.pdf", target="_blank">[中文版]</a>，不过英文版有一些修订)，供大家参考。其中，重要结论已由下划线标注，可供大家快速浏览。此外我也标注了一些重要的推断方法如何在Stata中使用。
                         </p>    
                         
                         <p>
@@ -179,6 +179,11 @@
                                 <li>如果聚类数量很少或聚类之间差异很大，考虑聚类的渐进标准误就不太好用了，因为其依赖于中心极限定理成立。</li>
                                 <li>除了汇报常用的渐进标准误，大多数情况下都建议大家另外再汇报由带约束条件的原始聚类自助法(restricted wild-cluster bootstrap)计算出的p值。</li>
                             </ol>
+                        </p>
+                            [2025.02.10 更新] <br/>
+                            前面提到，在DD估计中，如果处理组的聚类数量很少，最好用原始聚类自助法来进行推断。最近有一篇新的研究出来："<a id='paper' href="https://doi.org/10.1016/j.jeconom.2022.04.001" target="_blank">Standard Errors for Difference-in-Difference Regression</a>" (Hansen, 2025, <em>Journal of Applied Econometrics</em>)，文章的模拟结果表明，在DD中使用jackknife法计算出的聚类渐进标准误是更好的。作者有与MacKinnon他们的研究进行对话，指出"One difference between our simulation and theirs is our investigation of the impact of treatment effect heterogeneity (which induces conditional heteroskedasticity), as MacKinnon, Nielsen, and Webb (2023b) only investigate homoskedastic designs. This explains the divergence between our findings and theirs concerning the Wild bootstrap. Our results show that the Wild bootstrap performs well under low treatment effect heterogeneity (e.g., homoskedasticity) but not under high treatment effect heterogeneity (e.g., heteroskedasticity)." 等到之后有时间，我会追加更新本文的相关内容。
+                        <p>
+
                         </p>
                     </div>
                 </div>

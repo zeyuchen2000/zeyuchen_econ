@@ -1,0 +1,84 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\Fig5.log
+  log type:  text
+ opened on:  20 Feb 2024, 00:48:33
+
+. 
+. use "Rep_folder\data\Full_sample.dta", clear
+
+. keep if ym<=201702
+(19,414 observations deleted)
+
+. sort prov dist
+
+. by prov dist: egen average_lnAQI = mean(lnAQI)
+(32 missing values generated)
+
+. duplicates drop prov dist, force
+
+Duplicates in terms of prov dist
+
+(13,070 observations deleted)
+
+. 
+. ** Shandong Province
+. twoway (scatter average_lnAQI dist if prov=="山东"&ym<=201702), nodraw title(Shandong, size(medlarge)) legend(off) ///
+>             xtitle(Distance to the boundary, size(medlarge)) ytitle(Logarithm of AQI, size(medlarge))
+
+. graph save "Rep_folder\output_figures\sd_all.gph", replace
+(file Rep_folder\output_figures\sd_all.gph not found)
+file Rep_folder\output_figures\sd_all.gph saved
+
+. 
+. ** Shanxi Province
+. twoway (scatter average_lnAQI dist if prov=="山西"&ym<=201702), nodraw title(Shanxi, size(medlarge)) legend(off) ///
+>             xtitle(Distance to the boundary, size(medlarge)) ytitle(Logarithm of AQI, size(medlarge))
+
+. graph save "Rep_folder\output_figures\sx_all.gph", replace
+(file Rep_folder\output_figures\sx_all.gph not found)
+file Rep_folder\output_figures\sx_all.gph saved
+
+. 
+. ** Henan Province
+. twoway (scatter average_lnAQI dist if prov=="河南"&ym<=201702), nodraw title(Henan, size(medlarge)) legend(off) ///
+>             xtitle(Distance to the boundary, size(medlarge)) ytitle(Logarithm of AQI, size(medlarge))
+
+. graph save "Rep_folder\output_figures\hn_all.gph", replace
+(file Rep_folder\output_figures\hn_all.gph not found)
+file Rep_folder\output_figures\hn_all.gph saved
+
+. 
+. ** Hebei Province
+. twoway (scatter average_lnAQI dist if prov=="河北"&ym<=201702), nodraw title(Hebei, size(medlarge)) legend(off) ///
+>             xtitle(Distance to the boundary, size(medlarge)) ytitle(Logarithm of AQI, size(medlarge))
+
+. graph save "Rep_folder\output_figures\hb_all.gph", replace                              
+(file Rep_folder\output_figures\hb_all.gph not found)
+file Rep_folder\output_figures\hb_all.gph saved
+
+. 
+. ** Fig. 5
+. graph combine "Rep_folder\output_figures\sd_all.gph" "Rep_folder\output_figures\sx_all.gph" ///
+>                           "Rep_folder\output_figures\hn_all.gph" "Rep_folder\output_figures\hb_all.gph"
+
+. graph export "Rep_folder\output_figures\Fig5.pdf", replace
+file Rep_folder\output_figures\Fig5.pdf saved as PDF format
+
+. 
+. erase "Rep_folder\output_figures\sd_all.gph"
+
+. erase "Rep_folder\output_figures\sx_all.gph"
+
+. erase "Rep_folder\output_figures\hn_all.gph"
+
+. erase "Rep_folder\output_figures\hb_all.gph"
+
+. 
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\Stata\Rep_folder\output_logs\Fig5.log
+  log type:  text
+ closed on:  20 Feb 2024, 00:48:36
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
