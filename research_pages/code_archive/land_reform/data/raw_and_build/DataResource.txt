@@ -1,0 +1,37 @@
+"macro_var_2010.xlsx"
+- 人均可支配收入w：国家统计局
+- 常住居民数量L：2010年人口普查，计算过程见流动份额的计算
+- 户籍居民数量L_bar：2010年人口普查，计算过程见流动份额的计算
+- 价格指数P：国家统计局，用省的价格指数同时填充城乡数据，以2000为基准计算2010年的价格指数。
+
+"urban_constructive_land_area.xlsx"
+- 2009-2017年城市建设用地面积，数据来源于《国土资源统计年鉴》。
+
+"CFPS(2010-2020)"
+- 历年调查数据来源于CFPS官网，http://www.isss.pku.edu.cn/cfps/en/index.htm
+
+"trade_share"
+- 计算省份-部门间贸易份额的文件夹。
+- "China Multi-Regional Input-Output Table 2012.xlsx"
+	- 各省份农产品与非农产品投入产出表，原始数据来源于Zheng et al. (2020)，其中提供了2012年的31个省份×42个经济部门的投入产出表。
+- "trade_share.xlsx"和"trade_share_sep.xlsx"
+	- 将原始数据加总为农业部门和非农部门，并删除西藏自治区，得到30个省份×2个经济部门的贸易份额。数据处理见文件夹trade_share中的"build_pi.ipynb"。
+	- 假设所有部门均有贸易，得到"trade_share.xlsx"文件。
+	- 假设农业部门只和农业部门贸易、非农部门只和非农部门贸易，得到"trade_share_sep.xlsx"文件，目前使用这一贸易份额，与大多数文献相同。
+
+"migration_share"
+- 计算省份-部门间人口流动份额的文件夹。
+- "migration_share_TZ2019.xlsx"
+	- 各省份农业部门与非农部门的流动份额，原始数据来源于Tombe and Zhu (2019)，目前使用的是这个，其实是2005年的数据。
+	- 本文将其由向量转化为矩阵，并调整其顺序，数据处理见文件夹migration_share中的"build_m.ipynb"。
+- "migration_share.xlsx"
+	- 各省份农业部门与非农部门的流动份额，原始数据来源于2010年人口普查，主要使用了长表数据中"7-1 全国按现住地、户口登记地类型分的户口登记地在外乡镇街道人口"。
+	- 数据处理过程见"build_m.ipynb"。 首先从表格"B0102.xls"和"B0103d.xls"获得各省城乡常住人口，然后匹配至文件"B0701.xls"中，构建人口矩阵，最后使用人口矩阵就可以求得各省城乡的人口流动份额。
+
+"land_supply_share"
+- 计算各省建设用地配置比例的文件夹。
+- "land_supply_microdata.csv"是土地出让微观数据，来源于"土地市场网"。
+- 本文将原始微观数据加总至省份-年份，数据处理过程见"build_land_supply_share.ipynb"，得到文件"land_supply_share.csv"，其中包含各省份历年出让的住房用地面积、工业用地面积及其出让比例。
+
+
+
