@@ -236,7 +236,7 @@ div.info_content {
 }
 
 #main p {
-    margin-left: 1.5em;
+    margin-left: 1cm;
     margin-bottom: 5px;
 }
 
@@ -251,6 +251,12 @@ div.info_content {
     line-height: 1.2; 
     margin-top: 5px;
     padding-left: 1.5px;
+}
+
+.research_title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: -0.5cm;
 }
 
 .presented {
