@@ -67,7 +67,7 @@ a, a:visited {
 }
 
 a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 #header {
@@ -178,7 +178,7 @@ a:hover {
 }
 
 #note a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 #article_title {
@@ -190,7 +190,7 @@ a:hover {
 }
 
 #article_title a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 .theorem {
@@ -216,7 +216,7 @@ a:hover {
 }
 
 #author a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 .blog_title { 
@@ -246,7 +246,7 @@ a:hover {
 }
 
 #blog_language_button a:hover, #paper a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 #footer {

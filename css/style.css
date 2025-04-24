@@ -67,7 +67,7 @@ a, a:visited {
 }
 
 a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 #header {
@@ -181,7 +181,7 @@ a:hover {
 
 #information a:hover {
     text-decoration: none;
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 div.info_title {
@@ -269,7 +269,7 @@ div.info_content {
 }
 
 #author a:hover {
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 .blog_title { 
@@ -301,7 +301,7 @@ div.info_content {
 }
 
 #blog_language_button a:hover, #paper a:hover, #paper_sharing_button a:hover{
-    color: #DD6800;
+    color: #FFCB05;
 }
 
 
