@@ -256,7 +256,13 @@ div.info_content {
 .research_title {
     font-weight: bold;
     font-size: 18px;
-    margin-left: -0.5cm;
+    margin-left: -0.8cm;
+}
+
+.research_title::before {
+  content: "● ";
+  font-size: 0.8em;
+  margin-right: 0.4em;
 }
 
 .presented {
