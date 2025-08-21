@@ -240,18 +240,22 @@ div.info_content {
 }
 
 
+.research_item {
+    padding-left: 30px;
+}
+
 .abstract {
     font-size: 15px;
     font-family: "Carlito", sans-serif;
     line-height: 1.2; 
     margin-top: 5px;
-    padding-left: 1.5px;
+    padding-left: 30px;
 }
 
 .research_title {
     font-weight: bold;
     font-size: 18px;
-    margin-left: -0.8cm;
+    margin-left: -0.75cm;
 }
 
 .research_title::before {
