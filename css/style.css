@@ -1,47 +1,47 @@
 @font-face {
     font-family: 'Canger2';
-    src: url('/zeyuchen_econ/fonts/Cangerjinkai02-W02.ttf') format('truetype');
+    src: url('/fonts/Cangerjinkai02-W02.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Canger';
-    src: url('/zeyuchen_econ/fonts/Cangerjinkai02-W04.ttf') format('truetype');
+    src: url('/fonts/Cangerjinkai02-W04.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OpenSans Light';
-    src: url('/zeyuchen_econ/fonts/OpenSans-Light.ttf') format('truetype');
+    src: url('/fonts/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OpenSans';
-    src: url('/zeyuchen_econ/fonts/OpenSans-Regular.ttf') format('truetype');
+    src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('/zeyuchen_econ/fonts/Carlito-Regular.ttf') format('truetype');
+    src: url('/fonts/Carlito-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('/zeyuchen_econ/fonts/Carlito-Italic.ttf') format('truetype');
+    src: url('/fonts/Carlito-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('/zeyuchen_econ/fonts/Carlito-Bold.ttf') format('truetype');
+    src: url('/fonts/Carlito-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('/zeyuchen_econ/fonts/Carlito-BoldItalic.ttf') format('truetype');
+    src: url('/fonts/Carlito-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }

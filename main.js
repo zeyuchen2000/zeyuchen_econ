@@ -19,7 +19,7 @@ fetch('/navigation.html')
 
     // 分解路径    
     const pathParts = location.pathname.split('/');
-    let navKey = pathParts[2]; // 索引2就是/zeyuchen_econ/后面的第一级目录
+    let navKey = pathParts[1];
     // 需要特殊处理主页（根路径/或没有第三级目录）
     if (!navKey) {
       navKey = 'home';
