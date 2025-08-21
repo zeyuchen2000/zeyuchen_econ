@@ -1,47 +1,47 @@
 @font-face {
     font-family: 'Canger2';
-    src: url('https://www.zeyuchen.top/fonts/Cangerjinkai02-W02.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/Cangerjinkai02-W02.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Canger';
-    src: url('https://www.zeyuchen.top/fonts/Cangerjinkai02-W04.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/Cangerjinkai02-W04.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OpenSans Light';
-    src: url('https://www.zeyuchen.top/fonts/OpenSans-Light.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OpenSans';
-    src: url('https://www.zeyuchen.top/fonts/OpenSans-Regular.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('https://www.zeyuchen.top/fonts/Carlito-Regular.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/Carlito-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('https://www.zeyuchen.top/fonts/Carlito-Italic.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/Carlito-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('https://www.zeyuchen.top/fonts/Carlito-Bold.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/Carlito-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Carlito";
-    src: url('https://www.zeyuchen.top/fonts/Carlito-BoldItalic.ttf') format('truetype');
+    src: url('/zeyuchen_econ/fonts/Carlito-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -72,8 +72,8 @@ a:hover {
 
 #header {
     text-align: center;
-    padding-top: 52px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 10px;
 }
 
 #name {
@@ -240,10 +240,6 @@ div.info_content {
     margin-bottom: 5px;
 }
 
-#main_blog p {
-    margin-left: 0em;
-    margin-bottom: 5px;
-}
 
 .abstract {
     font-size: 15px;
@@ -278,37 +274,29 @@ div.info_content {
     color: #FFCB05;
 }
 
-.blog_title { 
+#paper_sharing_title { 
     font-size: 20px; 
     font-family: "Carlito", 'Canger', sans-serif;
     font-weight: bold;
-} 
-
-.blog_date{ 
-    font-size: 12px; 
-    font-family: 'OpenSans', sans-serif; 
-    letter-spacing: 1px;
-    margin-left: 2px;
 }
 
-.blog_div{
-    padding-bottom: 10px;
-    border-bottom: 1px solid #d0d0d0;
-}
-
-#blog_language_button, #paper_sharing_button{
-    color: #dddddd;
-    text-align: right;
-    
-}
-
-#blog_language_button a, #paper a, #paper_sharing_button a{
+#paper_sharing_title a { 
     color: #dddddd;
 }
 
-#blog_language_button a:hover, #paper a:hover, #paper_sharing_button a:hover{
+#paper_sharing_title a:hover {
     color: #FFCB05;
 }
+
+
+code {
+    background: #8b7b6b;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 80%;
+    font-family: 'Consolas', monospace;
+}
+
 
 
 #footer {

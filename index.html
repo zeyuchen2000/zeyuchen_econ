@@ -3,82 +3,24 @@
     <meta charset="UTF-8" name="msvalidate.01" content="8E53B8A0E197DC6800DF72F7C8BB956F" />
     <title>Home - Zeyu CHEN</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 
 <body>
-    <div id="header">
-        <a href="index.html" id="name">Zeyu CHEN</a>
-    </div>
+    <div id="header"></div>
 
     <div id="wrapper">
-        <div id="navigation">
-            <ul>
-                <li id="home" class="li_active" style="position: relative">
-                    <a href="index.html"> HOME </a>
-                </li>
-                <li id="research" style="position: relative">
-                    <a href="research.html"> RESEARCH </a>
-                </li>
-                <li id="blog" style="position: relative">
-                    <a href="blog.html"> BLOG </a>
-                </li>
-                <li id="cv" style="position: relative">
-                    <a href="assets/Zeyuchen_CV.pdf"> CV </a>
-                </li>
-            </ul>
-        </div>
+        <div id="navigation"></div>
 
         <div id="info_main_container">
-            <div id="information">
-                <div class="cropped-image-container">
-                    <img src="pictures/my_pict1.jpg" class="cropped-image">
-                </div>
-                
-                <div class="info_title">
-                    Name
-                </div>
-                <div class="info_content">
-                    Zeyu Chen (陈泽宇)
-                </div>
-
-                <div class="info_title">
-                    Nationality
-                </div>
-                <div class="info_content">
-                    Chinese
-                </div>
-
-                <div class="info_title">
-                    Date of birth
-                </div>
-                <div class="info_content">
-                    May 23, 2000
-                </div>
-
-                <div class="info_title">
-                    Mail
-                </div>
-                <div class="info_content">
-                    <p style="margin-top: 0;"><a href="mailto: rucczy@ruc.edu.cn">rucczy@ruc.edu.cn</a></p>
-
-                    <p style="margin-bottom: 0;"><a href="mailto: zychen.econ@outlook.com">zychen.econ@outlook.com</a></p>
-                </div>
-                
-                <div class="info_title">
-                    ORCID
-                </div>
-                <div class="info_content">
-                    <a href="https://orcid.org/0000-0003-2449-188X", target="_blank">0000-0003-2449-188X</a>
-                </div>
-            </div>
+            <div id="personal_info_container"></div>
 
             <div id="main">
                 <p style="margin-left: 0px;">Welcome to my personal website!</p>
                 
                 <p style="margin-left: 0;">
-                    I am <strong>Zeyu Chen</strong>. Beginning this summer, I will be joining the Department of Economics at <a href="https://bm.hkust.edu.hk/" target="_black">HKUST Business School</a> as a research assistant.
+                    I am <strong>Zeyu Chen</strong>. I am now a research assistant at the Department of Economics, <a href="https://bm.hkust.edu.hk/" target="_black">HKUST Business School</a>.
                 </p>
 
                 <p style="margin-left: 0;">
@@ -99,7 +41,7 @@
                 <h2>Research Experience</h2>
             
                 <p>
-                    2023–2025: Research assistant for the "Dr. Yang Cheng–The Cambridge Group for the History of Population and Social Structure Cooperative Research Project 'Occupational Structure of 18th–19th Century China'", Renmin University of China & Cambridge Group for the History of Population and Social Structure
+                    2023–2025: Research assistant for the "Dr. Yang Cheng–The Cambridge Group for the History of Population and Social Structure Cooperative Research Project 'Occupational Structure of 18th–19th Century China,'" Renmin University of China & Cambridge Group for the History of Population and Social Structure
                 </p>
 
                 <p>
@@ -127,7 +69,11 @@
     </div>
 
     <div id="footer" style="border-top: 0px solid #d0d0d0;">
-        &copy; 2024 Zeyu CHEN.
+        &copy; <span id="year"></span> Zeyu CHEN.
     </div>
-   
+
+
+    <script src="main.js"></script>
+
+
 </body>
