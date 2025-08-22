@@ -18,7 +18,7 @@
             <div id="main">
                 <p style="text-decoration: underline;">Under construction ...</p>
 
-                <p><em>This page serves as an ongoing archive for personal academic notes. It is hoped that these notes may also be beneficial to others. Please be advised that: (i) all references remain the intellectual property of their original authors, and original links will be provided whenever possible; and (ii) these notes are intended as concise reminders of the content of the original papers, rather than substitutes thereof.</em></p>
+                <p><em>This page serves as an ongoing archive of some of my personal academic notes. It is hoped that these notes may also be beneficial to others. Please be advised that: (i) all references remain the intellectual property of their original authors, and original links will be provided whenever possible; and (ii) these notes are intended as concise reminders of the content of the original papers, rather than substitutes thereof.</em></p>
 
                 <h2 id="paper_sharing_title"><a href="notes/paper_sharing/index.html">Paper Sharing Column</a></h2>
 
@@ -53,6 +53,48 @@
                 </ul>
 
                 <h2>Others</h2>
+
+                <ul>
+                    <li style="margin-bottom: 10px;">
+                        "Using and Interpreting Fixed Effects Models" (Breuer and Dehaan, 2024, <em>Journal of Accounting Research</em>)
+                        <ul>
+                            <li>This paper is available at <a href="https://doi.org/10.1111/1475-679X.12559" target="_blank">[paper link]</a>. Many of the points it makes are likely already familiar to economic researchers. However, it's still very useful to keep them in mind whenever conducting empirical analysis.</li>
+                            <li>Here are some quick notes summarizing the main points: <a href="notes/20250703_FE_notes.pdf" target="_blank">[notes]</a>.</li>
+                        </ul>
+                    </li>
+                
+                    <li style="margin-bottom: 10px;">
+                        "Cluster-robust inference: A guide to empirical practice" (MacKinnon et al., 2023, <em>Journal of Econometrics</em>)
+                        <ul>
+                            <li>This is a really useful paper on cluster-robust inference. This original paper can be found at <a href="https://doi.org/10.1016/j.jeconom.2022.04.001" target="_blank">[paper link]</a>.</li>
+                            <li>I've given a few presentations on it, totaling about 3 hours, in a workshop. I also added some extra materials and shared my own thoughts beyond what's covered in the paper, which can be found in the <a href="notes/20230718_cluster_slides.pdf", target="_blank">[slides]</a>.</li>
+                            <li>I've also uploaded a video about this paper to Bilibili. If you're interested, you can find it there. (●'◡'●)</li>
+                            <details>
+                                <summary>A summary to some key points</summary>
+                                    <ol>
+                                        <li>When deciding to use asymptotic inference, it is recommended to use asymptotic standard errors calculated from jackknife (leave-one-out) method when sample size is small, since it has better small-sample properties (it is unbiased) and is relatively conservative.</li>
+                                        <li>As the sample size increases, there seems to be a lower bound on the shrinkage of the cluster-robust standard error, and thus the underestimation of the standard error due to ignoring the clustered structure becomes increasingly larger. (In other words, it is more necessary to treat clustered structure carefully when the sample size is large.)</li>
+                                        <li>When using DD estimates, it is important to cluster at least to the geographic level where the treatment is assigned.</li>
+                                        <li>If the number of treatment clusters are small, don't use asymptotic cluster-robust standard errors but use wide-cluster bootstrap standard errors.</li>
+                                        <li>In the vast majority of cases, adding fixed effects is not the reason for not clustering.</li>
+                                        <li>
+                                            There are two rules of thumb to decide the cluster level:
+                                            <ol type="i">
+                                                <li>An intuitive rule: to choose the most coarse one among all possible levels, up to the point at which there is concern about having too few clusters</li>
+                                                <li>A conservative rule: to report the largest standard error for the coefficient of interest across all estimated at varying possible cluster levels.</li>
+                                            </ol>
+                                        </li>
+                                        <li>There are some pre-tests that are helpful in deciding the cluster level, but pre-tests always lead to over-reject because they in and of themselves could make mistakes. Therefore, The ideal procedure is to cluster based on the second rule of thumb and use pre-tests to further support the choice.</li>
+                                        <li>The permutation test ("placebo test") commonly used in DD estimation (especially in Chinese literature) is used to support the statistic inference rather than the causal identification.</li>
+                                        <li>The asymptotic inference relies on the central limit theorem (CLT). The number of clusters and the heterogeneity among clusters both determine whether asymptotic theories work well. Therefore, researchers should report the number of clusters and the heterogeneity among clusters. Additionally, it implies that there will not be a universal threshold of clusters number \( G^* \) beyond which we can be assured of effective asymptotic inference. </li>
+                                        <li>When the number of clusters is small or there are huge heterogeneity among clusters, the asymptotic standard errors usually fail to work effectively.</li>
+                                        <li>In addition to the default asymptotic standard errors in Stata, it's always recommended to report p-values calculated using wilde bootstrap inference, especially restricted wild-cluster bootstrap (WCR).</li>
+                                    </ol>
+                            </details>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>
