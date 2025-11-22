@@ -259,9 +259,21 @@ div.info_content {
 }
 
 .research_title::before {
-  content: "● ";
-  font-size: 0.8em;
-  margin-right: 0.4em;
+    content: "● ";
+    font-size: 0.8em;
+    margin-right: 0.4em;
+}
+
+
+.research_note {
+    display: block;
+    padding-left: 0.35cm; 
+    text-indent: -0.35cm;
+}
+
+
+.research_note::before {
+    content: "– ";
 }
 
 .presented {
