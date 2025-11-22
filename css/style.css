@@ -264,18 +264,6 @@ div.info_content {
     margin-right: 0.4em;
 }
 
-
-.research_note {
-    display: block;
-    padding-left: 0.35cm; 
-    text-indent: -0.35cm;
-}
-
-
-.research_note::before {
-    content: "– ";
-}
-
 .presented {
     margin-left: 1.5em;
     display: block;
