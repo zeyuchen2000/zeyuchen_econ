@@ -1,7 +1,7 @@
 
 body {
     font-family: "Carlito", 'Canger', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     padding-left: 0;
     padding-right: 0;
     color: #dddddd;
@@ -34,7 +34,7 @@ body {
 }
 
 #article_title {
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 #article_title a {
@@ -53,7 +53,7 @@ body {
 }
 
 .abstract {
-    font-size: 15px;
+    font-size: 0.9rem;
     font-family: "Carlito", 'Canger', sans-serif;
     line-height: 1.2; 
     margin-top: 5px;
@@ -73,14 +73,14 @@ body {
 }
 
 .notes_title { 
-    font-size: 20px; 
+    font-size: 1.1rem; 
     font-family: "Carlito", 'Canger', sans-serif;
     font-weight: bold;
 } 
 
 .date{ 
-    font-size: 12px; 
+    font-size: 0.85rem; 
     font-family: 'OpenSans', sans-serif; 
-    letter-spacing: 1px;
+    letter-spacing: 0.05rem;
 }
 

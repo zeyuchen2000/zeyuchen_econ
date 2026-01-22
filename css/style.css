@@ -46,9 +46,19 @@
     font-style: italic;
 }
 
+html {
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; 
+    }
+}
+
+
 body {
     font-family: "Carlito", 'Canger', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     padding-left: 10%;
     padding-right: 10%;
     color: #dddddd;
@@ -77,7 +87,7 @@ a:hover {
 }
 
 #name {
-    font-size: 40px;
+    font-size: 3rem;
     text-align: center;
     color: #eeeeee;
     font-family: 'OpenSans', 'Carlito', 'Canger', sans-serif;
@@ -90,7 +100,7 @@ a:hover {
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
-    font-size: 15px;
+    font-size: 1.1rem;
     color: #cccccc;
     position: relative;
     font-family: 'OpenSans', 'Carlito', 'Canger', sans-serif;
@@ -193,7 +203,7 @@ div.info_title {
     padding: 2px;
     padding-left: 4px;
     border-bottom: 1px solid #d0d0d0;
-    font-size: 13px;
+    font-size: 0.9rem;
 }
 
 div.info_content {
@@ -201,7 +211,7 @@ div.info_content {
     color: #dddddd;
     padding: 2px;
     padding-left: 4px;
-    font-size: 12px;
+    font-size: 0.85rem;
     line-height: 10px;
 }
 
@@ -232,7 +242,7 @@ div.info_content {
 }
 
 #main h2 {
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 #main p {
@@ -245,7 +255,7 @@ div.info_content {
 }
 
 .abstract {
-    font-size: 15px;
+    font-size: 0.95rem;
     font-family: "Carlito", sans-serif;
     line-height: 1.2; 
     margin-top: 5px;
@@ -254,13 +264,14 @@ div.info_content {
 
 .research_title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-left: -0.75cm;
+    margin-top: -0.5cm;
 }
 
 .research_title::before {
     content: "● ";
-    font-size: 0.8em;
+    font-size: 0.9rem;
     margin-right: 0.4em;
 }
 
@@ -278,7 +289,7 @@ div.info_content {
 }
 
 #paper_sharing_title { 
-    font-size: 20px; 
+    font-size: 1.2rem; 
     font-family: "Carlito", 'Canger', sans-serif;
     font-weight: bold;
 }
@@ -296,7 +307,7 @@ code {
     background: #8b7b6b;
     padding: 2px 4px;
     border-radius: 3px;
-    font-size: 80%;
+    font-size: 0.8rem;
     font-family: 'Consolas', monospace;
 }
 
@@ -305,7 +316,7 @@ code {
 #footer {
     border-top: 1px solid #d0d0d0;
     color: #dddddd;
-    font-size: 12px;
+    font-size: 0.9rem;
     font-family: 'OpenSans', sans-serif;
     text-align: right;
     padding: 10px 0;
