@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 
 // 标题栏 fetch
-fetch('/header.html')
+fetch('/zeyuchen_econ/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header').innerHTML = data;
@@ -12,7 +12,7 @@ fetch('/header.html')
 
 
 // 导航栏 fetch 并高亮
-fetch('/navigation.html')
+fetch('/zeyuchen_econ/navigation.html')
   .then(response => response.text())
   .then(navHtml => {
     document.getElementById('navigation').innerHTML = navHtml;
@@ -44,7 +44,7 @@ fetch('/navigation.html')
 
   
 // 个人信息栏 fetch
-fetch('/personal_info_container.html')
+fetch('/zeyuchen_econ/personal_info_container.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('personal_info_container').innerHTML = data;
