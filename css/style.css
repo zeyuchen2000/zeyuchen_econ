@@ -247,34 +247,43 @@ div.info_content {
 
 
 .research_item {
-    padding-left: 30px;
-}
-
-.abstract {
-    font-size: 0.95rem;
-    font-family: "Carlito", sans-serif;
-    line-height: 1.2; 
-    margin-top: 5px;
-    padding-left: 30px;
+    position: relative;
+    padding-left: 55px;
+    padding-bottom: 20px;
+    line-height: 1.4; 
 }
 
 .research_title {
+    display: block;
+    position: relative;
     font-weight: bold;
+    margin-left: -25px;
     font-size: 1.2rem;
-    margin-left: -0.75cm;
-    margin-top: -0.5cm;
+    margin-bottom: -16px;
 }
 
 .research_title::before {
     content: "● ";
     font-size: 0.9rem;
     margin-right: 0.4em;
+    position: absolute;
+    left: -20px;
+    top: 4px;
 }
 
 .presented {
     margin-left: 1.5em;
     display: block;
 }
+
+
+.abstract {
+    font-size: 0.95rem;
+    font-family: "Carlito", sans-serif;
+    line-height: 1.2; 
+    margin-top: 5px;
+}
+
 
 #author a {
     color: #dddddd
