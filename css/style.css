@@ -257,9 +257,8 @@ div.info_content {
     display: block;
     position: relative;
     font-weight: bold;
-    margin-left: -25px;
+    margin-left: -10px;
     font-size: 1.2rem;
-    margin-bottom: -16px;
 }
 
 .research_title::before {
