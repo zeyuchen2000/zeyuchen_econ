@@ -248,7 +248,7 @@ div.info_content {
 
 .research_item {
     position: relative;
-    padding-left: 55px;
+    padding-left: 35px;
     padding-bottom: 20px;
     line-height: 1.4; 
 }
@@ -257,7 +257,7 @@ div.info_content {
     display: block;
     position: relative;
     font-weight: bold;
-    margin-left: -10px;
+    margin-left: 0px;
     font-size: 1.2rem;
 }
 
